@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# version 12
+CACHE:
+../../codebase/mobile.js
+../../codebase/dhx_proxy.js
+../../codebase/mobile.css
+../../codebase/imgs/images.png
+
+NETWORK:
+./data/events_mobile.php

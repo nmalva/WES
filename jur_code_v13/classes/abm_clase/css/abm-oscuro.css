@@ -1,0 +1,280 @@
+.mabm{
+}
+
+/* estilo de los listados */
+.mabm .mlistado{
+	border:0;
+	border-collapse:collapse;
+	font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;
+	font-size:13px;
+}
+	.mabm .mtitulo{
+		float:left;
+		font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;
+		font-size:20px;
+		color: white;
+		font-weight: bold;
+	}
+	.mabm .mbotonera{
+		float:right;
+		margin-left:30px;
+	}
+	.mabm .mlistado .btnAgregar{
+		background:#86D92C;
+		border:1px solid #70AD2E;
+		cursor:pointer;
+		height:32px;
+		line-height:32px;
+		padding:0 20px;
+		text-align:center;
+		color: white;
+		font-weight: bold;
+		font-size: 13px;
+	}
+		.mabm .mlistado .btnAgregar:hover{
+			background: #7FCF2A;
+		}
+	.mabm .mtituloColEditar{
+		text-align:center !important;
+	}
+	.mabm .mtituloColBorrar{
+		text-align:center !important;
+	}
+	.mabm .celdaEditar{
+		text-align:center;
+	}
+	.mabm .celdaBorrar{
+		text-align:center;
+	}
+	.mabm .mlistado TH{
+		FONT-WEIGHT: bold; 
+		font-size:10px !important;
+		text-align: left;
+		background-color: #C3C3C3;
+		padding: 5px;
+		color: #1E1E1E;
+		border-top: 1px solid #498E00;
+		border-bottom: 1px solid #E5E5E5;
+	}
+	.mabm .mlistado TH A{
+		font-size:10px !important;
+		color: #1E1E1E;
+		text-decoration: none;
+	}
+	.mabm .mlistado TH A:hover{
+
+	}
+	.mabm .mlistado TD{
+		padding: 5px;
+		border-right:1px solid #E5E5E5;
+	}
+	.mabm .mlistado TR.rallado1{ /* filas impares */
+		BACKGROUND-COLOR: #D7D7D7;
+	}
+	.mabm .mlistado TR.rallado{ /* filas pares */
+		BACKGROUND-COLOR: #EBEBEB;
+	}
+	.mabm .mlistado THEAD TH{
+		background:#57A700 url(../img/oscuro/form_heading.gif) repeat-x;
+		border-color:#57A700 #57A700;
+		border-style:solid none none;
+		border-width:1px 1px medium;
+		padding:10px 10px;
+		text-align:left;
+	}
+	.mabm .mlistado THEAD TH DIV{
+		font-size: 19px !important;
+	}
+	.mabm .mlistado TFOOT TH{
+		FONT-WEIGHT: normal; 
+		text-align: left;
+		BACKGROUND-COLOR: #C3C3C3;
+		color: #565656;
+		padding: 12px 10px;
+		border-top: 1px solid #E5E5E5;
+	}
+	.mabm .mlistado TFOOT TH A{
+	}
+	.mabm .mlistado TFOOT TH A{
+		text-decoration: none !important;
+	}
+
+/* para los formularios de ingreso de datos */
+.mabm .mformulario{
+	border:0;
+	background-color: #1E1E1E;
+	margin:10px;
+	border-collapse:collapse;
+	font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;
+	font-size:13px;
+}
+	.mabm .mformulario THEAD TH{
+		background:#57A700 url(../img/oscuro/form_heading.gif) repeat-x;
+		border-color:#57A700 #57A700;
+		border-style:solid none none;
+		border-width:1px 1px medium;
+		font-size:19px;
+		padding:10px 20px;
+		text-align:left;
+		color: white;
+	}
+	.mabm .mformulario TFOOT TH{
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.mabm .mformulario TH{
+		font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;
+		font-size:12px;
+		padding-left:30px;
+		padding-right:15px;
+		text-align:left;
+		color: #D7D7D7;
+	}
+	.mabm .mformulario TD{
+		padding: 8px 12px;
+	}
+	.mabm .mformulario .input-text{
+		width: 200px;
+		background:#282828 url(../img/oscuro/form_input.gif) repeat-x;
+		border:1px solid #111111;
+		padding:5px 3px;
+		color: white;
+	}
+	.mabm .mformulario .input-fecha{
+		width: 200px;
+		background:#282828 url(../img/oscuro/form_input.gif) repeat-x;
+		border:1px solid #111111;
+		padding:5px 3px;
+		color: white;
+	}
+	.mabm .mformulario .input-textarea{
+		width: 200px;
+		background:#282828 url(../img/oscuro/form_input.gif) repeat-x;
+		border:1px solid #111111;
+		padding:5px 3px;
+		height: 50px;
+		color: white;
+	}
+	.mabm .mformulario .input-select{
+		width: 200px;
+		background:#282828 url(../img/oscuro/form_input.gif) repeat-x;
+		border:1px solid #111111;
+		padding:5px 3px;
+		color: white;
+	}
+	.mabm .mformulario .input-button{
+		background:#5AAE00 url(../img/oscuro/form_button.gif) repeat-x;
+		border:1px solid #70AD2E;
+		cursor:pointer;
+		height:32px;
+		line-height:32px;
+		padding:0 20px;
+		text-align:center;
+		color: white;
+		font-size: 11px;
+	}
+		.mabm .mformulario .input-button:hover{
+			background: #86D92C none;
+		}
+	.mabm .mformulario .input-submit{
+		background:#5AAE00 url(../img/oscuro/form_button.gif) repeat-x;
+		border:1px solid #70AD2E;
+		cursor:pointer;
+		height:32px;
+		line-height:32px;
+		padding:0 20px;
+		text-align:center;
+		color: white;
+		font-weight: bold;
+		font-size: 13px;
+	}
+		.mabm .mformulario .input-submit:hover{
+			background: #86D92C none;
+		}
+	.mabm .mformulario .divBtnAceptar{
+		float: right;
+		margin-right: 5px;
+	}
+	.mabm .mformulario .divBtnCancelar{
+		float: left;
+		margin-left: 5px;
+	}
+
+.mabm .merror {
+	background: #F7F1EF url(../img/icon-alert.png) 5px 5px no-repeat;
+	border-top: 4px solid #C40000;
+	border-bottom: 4px solid #C40000;
+	color: #000;
+	margin-top: 5px;
+	padding-left: 40px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom:10px;
+}
+
+
+.mabm .paginado{
+}
+	.mabm .paginado .rotuloTotalRegistros{
+	}
+	.mabm .paginado .ant_desact, .mabm .paginado .sig_desact{
+		background-color: #AFAFAF;
+		border: 1px solid #D1D1D1;
+		padding: 2px;
+		margin: 2px;
+		text-decoration: none;
+	}
+	.mabm .paginado .link_pagina_actual{
+		background-color: #9CFD34;
+		border: 1px solid #E5E5E5;
+		color: #54891C;
+		padding: 2px;
+		margin: 2px;
+		text-decoration: none;
+	}
+	.mabm .paginado .link_pagina{
+		background-color: #86D92C;
+		border: 1px solid #E5E5E5;
+		padding: 2px;
+		text-decoration: none;
+	}
+		.mabm .paginado a.link_pagina:hover{
+			background-color: #96F332;
+			border: 1px solid #D4D4D4;
+			text-decoration: none;
+		}
+	.mabm .paginado .link_ant, .mabm .paginado .link_sig{
+		background-color: #86D92C;
+		border: 1px solid #E5E5E5;
+		padding: 2px;
+		text-decoration: none;
+	}
+		.mabm .paginado a.link_ant:hover, .mabm .paginado a.link_sig:hover{
+			background-color: #96F332;
+			border: 1px solid #D4D4D4;
+			text-decoration: none;
+		}
+
+.mabm .mhint {
+	display: none;
+	filter: alpha(opacity=70);
+	opacity: .7;
+	position: absolute;
+	width: 200px;
+	margin-top: -3px;
+	margin-left: 10px;
+	border: 1px solid #797979;
+	padding: 10px 12px;
+	background: #C7C7C7 url(../img/pointer.gif) no-repeat -10px 5px;
+}
+.mabm .mhint .mhint-pointer {
+	position: absolute;
+	left: -10px;
+	top: 5px;
+	width: 10px;
+	height: 19px;
+	background: url(../img/pointer.gif) left top no-repeat;
+}

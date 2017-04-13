@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:mobile_advanced    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="advancedchanging_the_structure_of_the_scheduler" id="advancedchanging_the_structure_of_the_scheduler">Advanced: changing the structure of the scheduler</a></h1>
+<div class="level1">
+
+<p>
+The mobile scheduler has a multiview-based architecture. Details see in the related DHTMLX Touch documentation <a href="http://www.google.com/search?q=touch_architecture&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=touch_architecture&amp;btnI=lucky">&#039;Building app architecture&#039;</a>. 
+</p>
+
+<p>
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+Please remember, you can customize just toolbars of the scheduler. 
+</div>
+</p>
+
+<p>
+So, in this article we will concentrate your attention on toolbars. Below, you can find all the available toolbars and their default definitions. 
+</p>
+
+<p>
+The detail information about the toolbar you can find in the DHTMLX Touch documentation - <a href="http://www.google.com/search?q=toolbar&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=toolbar&amp;btnI=lucky">&#039;Toolbar component&#039;</a>.
+</p>
+
+</div>
+
+<h2><a name="multiview" id="multiview">Multiview</a></h2>
+<div class="level2">
+
+<p>
+Main <strong>multiview</strong> of the scheduler contains 3 views:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Event preview screen</strong>;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Details form</strong>;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Start(end) date edit form</strong>;</div>
+</li>
+<li class="level1"><div class="li"> Sub-multiview (supplemented with the bottom toolbar):</div>
+<ul>
+<li class="level2"><div class="li"> <strong>List</strong> (doesn&#039;t contain any toolbars);</div>
+</li>
+<li class="level2"><div class="li"> <strong>Day</strong>;</div>
+</li>
+<li class="level2"><div class="li"> <strong>Month</strong>. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3><a name="day_view" id="day_view">Day view</a></h3>
+<div class="level3">
+
+<p>
+<img src="./images/dhtmlxschedulerday_view_toolbar.png" class="media" alt="" />
+</p>
+
+<p>
+In the “Day” view, the toolbar contains navigation buttons and the label displaying the selected date.<br/>
+
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">day_toolbar</span> <span class="sy0">=</span> <span class="br0">&#91;</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'label'</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;prev&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;left&quot;</span><span class="sy0">,</span>   label<span class="sy0">:</span><span class="st0">&quot;&lt;div class='dhx_cal_prev_button'&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'label'</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;date&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;center&quot;</span><span class="sy0">,</span> width<span class="sy0">:</span><span class="nu0">200</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'label'</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;next&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span>  label<span class="sy0">:</span><span class="st0">&quot;&lt;div class='dhx_cal_next_button'&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&quot;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+</div>
+
+<h3><a name="month_view" id="month_view">Month view</a></h3>
+<div class="level3">
+
+<p>
+In the “Month” view the toolbar is a part of calendar integrated to the view (not an individual component). So, if you want to customize this toolbar, please, refer to the <a href="calendar.html" class="urlextern" title="http://docs.dhtmlx.com/touch/doku.php?id=calendar"  rel="nofollow">related calendar documentation</a>.
+</p>
+
+</div>
+
+<h3><a name="event_preview_screen" id="event_preview_screen">Event preview screen</a></h3>
+<div class="level3">
+
+<p>
+<img src="./images/dhtmlxschedulerevent_preview_toolbar.png" class="media" alt="" />
+</p>
+
+<p>
+Here, the toolbar contains 2 buttons: “Back” and “Edit” (the buttons are hidden in the <a href="dhtmlxscheduler___read-only_mode.html" class="wikilink1" title="dhtmlxscheduler:read-only_mode">read-only mode</a>).
+</p>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">selected_toolbar</span> <span class="sy0">=</span> <span class="br0">&#91;</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">icon_back</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;back&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;left&quot;</span><span class="sy0">,</span>  label<span class="sy0">:</span>labels.<span class="me1">icon_back</span><span class="sy0">,</span> css<span class="sy0">:</span><span class="st0">&quot;cancel&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">icon_edit</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;edit&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span>labels.<span class="me1">icon_edit</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+</div>
+
+<h3><a name="start_end_date_edit_form" id="start_end_date_edit_form">Start(end) date edit form</a></h3>
+<div class="level3">
+
+<p>
+<img src="./images/dhtmlxschedulerdate_editform_toolbar.png" class="media" alt="" />
+</p>
+
+<p>
+The toolbar contains 2 buttons: “Cancel” and “Done” and the label displaying which date is edited: <em>start</em> or <em>end</em> <br/>
+ (the view is hidden in the <a href="dhtmlxscheduler___read-only_mode.html" class="wikilink1" title="dhtmlxscheduler:read-only_mode">read-only mode</a>).
+</p>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">date_toolbar</span> <span class="sy0">=</span> <span class="br0">&#91;</span>
+        <span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;cancel_date&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;left&quot;</span><span class="sy0">,</span>  width<span class="sy0">:</span><span class="nu0">90</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Cancel&quot;</span><span class="sy0">,</span> css<span class="sy0">:</span><span class="st0">&quot;cancel&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+        <span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'label'</span><span class="sy0">,</span>  id<span class="sy0">:</span><span class="st0">&quot;datetype&quot;</span><span class="sy0">,</span>    align<span class="sy0">:</span><span class="st0">&quot;center&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+        <span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;done&quot;</span><span class="sy0">,</span>        align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span> width<span class="sy0">:</span><span class="nu0">90</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Done&quot;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+</div>
+
+<h3><a name="details_form" id="details_form">Details form</a></h3>
+<div class="level3">
+
+<p>
+<img src="./images/dhtmlxschedulerdetails_form_toolbar.png" class="media" alt="" />
+</p>
+
+<p>
+The toolbar of the details form has 2 buttons: “Cancel” and “Save”.
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">form_toolbar</span> <span class="sy0">=</span> <span class="br0">&#91;</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">icon_cancel</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;cancel&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;left&quot;</span><span class="sy0">,</span>  label<span class="sy0">:</span>labels.<span class="me1">icon_cancel</span><span class="sy0">,</span> css<span class="sy0">:</span><span class="st0">&quot;cancel&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">icon_save</span><span class="sy0">,</span>   id<span class="sy0">:</span><span class="st0">&quot;save&quot;</span><span class="sy0">,</span>   align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span>labels.<span class="me1">icon_save</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+</div>
+
+<h2><a name="main_bottom_toolbar" id="main_bottom_toolbar">Main bottom toolbar</a></h2>
+<div class="level2">
+
+<p>
+<img src="./images/dhtmlxschedulermain_toolbar.png" class="media" alt="" />
+</p>
+
+<p>
+Main scheduler toolbar contains 3 controls: 
+</p>
+<ul>
+<li class="level1"><div class="li"> “Today” button</div>
+</li>
+<li class="level1"><div class="li">  tabbar with the “List”, “Day” and “Month”  tabs</div>
+</li>
+<li class="level1"><div class="li">  “Add” button</div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">bottom_toolbar</span> <span class="sy0">=</span> <span class="br0">&#91;</span>
+ 	<span class="br0">&#123;</span> view<span class="sy0">:</span><span class="st0">&quot;button&quot;</span><span class="sy0">,</span>id<span class="sy0">:</span><span class="st0">&quot;today&quot;</span><span class="sy0">,</span>label<span class="sy0">:</span>labels.<span class="me1">icon_today</span><span class="sy0">,</span>inputWidth<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">icon_today</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;left&quot;</span><span class="sy0">,</span>width<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">icon_today</span><span class="sy0">+</span><span class="nu0">6</span><span class="br0">&#125;</span><span class="sy0">,</span>
+ 	<span class="br0">&#123;</span> view<span class="sy0">:</span><span class="st0">&quot;segmented&quot;</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;buttons&quot;</span><span class="sy0">,</span>selected<span class="sy0">:</span><span class="st0">&quot;list&quot;</span><span class="sy0">,</span>align<span class="sy0">:</span><span class="st0">&quot;center&quot;</span><span class="sy0">,</span>multiview<span class="sy0">:</span><span class="kw2">true</span><span class="sy0">,</span> options<span class="sy0">:</span><span class="br0">&#91;</span>
+		<span class="br0">&#123;</span>value<span class="sy0">:</span><span class="st0">&quot;list&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span>labels.<span class="me1">list_tab</span><span class="sy0">,</span>width<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">list_tab</span><span class="br0">&#125;</span><span class="sy0">,</span>
+		<span class="br0">&#123;</span>value<span class="sy0">:</span><span class="st0">&quot;day&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span>labels.<span class="me1">day_tab</span><span class="sy0">,</span>width<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">day_tab</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    		<span class="br0">&#123;</span>value<span class="sy0">:</span><span class="st0">&quot;month&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span>labels.<span class="me1">month_tab</span><span class="sy0">,</span>width<span class="sy0">:</span>scheduler.<span class="me1">xy</span>.<span class="me1">month_tab</span><span class="br0">&#125;</span>
+	<span class="br0">&#93;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span> view<span class="sy0">:</span><span class="st0">&quot;button&quot;</span><span class="sy0">,</span>css<span class="sy0">:</span><span class="st0">&quot;add&quot;</span><span class="sy0">,</span>id<span class="sy0">:</span><span class="st0">&quot;add&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span>label<span class="sy0">:</span><span class="st0">&quot;&amp;nbsp;+&amp;nbsp;&quot;</span><span class="sy0">,</span>inputWidth<span class="sy0">:</span><span class="nu0">42</span><span class="sy0">,</span>width<span class="sy0">:</span><span class="nu0">50</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span> view<span class="sy0">:</span><span class="st0">&quot;label&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;&quot;</span><span class="sy0">,</span>inputWidth<span class="sy0">:</span><span class="nu0">42</span><span class="sy0">,</span>width<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">,</span> batch<span class="sy0">:</span><span class="st0">&quot;readonly&quot;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+</div>
+
+<h2><a name="adding_new_elements_to_the_toolbar_and_event_handling" id="adding_new_elements_to_the_toolbar_and_event_handling">Adding new elements to the toolbar and event handling</a></h2>
+<div class="level2">
+
+<p>
+If you want to add some custom button to one of the mentioned toolbars, you need to redefine the structure of that toolbar. <br/>
+
+Clicks on the default buttons are handled automatically. But for new buttons you should define “click” event handlers. 
+</p>
+
+<p>
+Let&#039;s assume you want to add a new button to <strong>Event Preview screen</strong>  - &#039;Location&#039;. 
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulercustom_toolbar.png" class="media" alt="" />
+</p>
+
+<p>
+The definition of your new toolbar can be the following:
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">selected_toolbar</span> <span class="sy0">=</span> <span class="br0">&#91;</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span><span class="nu0">90</span><span class="sy0">,</span> css<span class="sy0">:</span><span class="st0">&quot;cancel&quot;</span><span class="sy0">,</span> id<span class="sy0">:</span><span class="st0">&quot;back&quot;</span><span class="sy0">,</span>     align<span class="sy0">:</span><span class="st0">&quot;left&quot;</span><span class="sy0">,</span>  label<span class="sy0">:</span><span class="st0">&quot;Back&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span><span class="nu0">90</span><span class="sy0">,</span> width<span class="sy0">:</span><span class="nu0">100</span><span class="sy0">,</span>    id<span class="sy0">:</span><span class="st0">&quot;location&quot;</span><span class="sy0">,</span> align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Location&quot;</span><span class="sy0">,</span> click<span class="sy0">:</span><span class="st0">&quot;showLocation&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span> <span class="co1">//the new button</span>
+	<span class="br0">&#123;</span>view<span class="sy0">:</span><span class="st0">'button'</span><span class="sy0">,</span> inputWidth<span class="sy0">:</span><span class="nu0">70</span><span class="sy0">,</span> width<span class="sy0">:</span><span class="nu0">70</span><span class="sy0">,</span>     id<span class="sy0">:</span><span class="st0">&quot;edit&quot;</span><span class="sy0">,</span>     align<span class="sy0">:</span><span class="st0">&quot;right&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Edit&quot;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span>;</pre>
+<p>
+To show the event location on a button click, you need to define some handler function, for example, as follows:
+
+</p>
+<pre class="code javascript"><span class="kw2">function</span> showLocation<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw2">var</span> eventId <span class="sy0">=</span> $$<span class="br0">&#40;</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>.<span class="me1">getCursor</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+	<span class="kw2">var</span> location <span class="sy0">=</span> $$<span class="br0">&#40;</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>.<span class="kw1">item</span><span class="br0">&#40;</span>eventId<span class="br0">&#41;</span>.<span class="me1">location</span>;
+	dhx.<span class="kw3">alert</span><span class="br0">&#40;</span>location<span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre>
+<p>
+In the function you could be confused by method <em>getCursor()</em>. This method is a part of &#039;binding&#039; functionality that&#039;s used by the scheduler. You can read about the mentioned functionality in the related DHTMLX Touch documentation - <a href="http://www.google.com/search?q=dp_binding&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=dp_binding&amp;btnI=lucky">&#039;Binding&#039;</a>.
+</p>
+
+<p>
+<strong>Related sample:</strong> <em>samples/01_basic/06_custom_form.html</em>
+</p>
+
+</div>
+
+<h2><a name="accessing_elements_of_the_scheduler" id="accessing_elements_of_the_scheduler">Accessing elements of the scheduler</a></h2>
+<div class="level2">
+
+<p>
+The scheduler includes different components: lists, toolbars, a form and etc. To access any of them you can use the &#039;<em><strong>$$(schedulerId).$$(componentId)</strong></em>&#039; construction.
+</p>
+
+<p>
+The ids of the toolbars&#039; buttons can be found above, in the toolbars&#039; descriptions. And here are the ids of components from the multiview of the scheduler:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>&#039;event&#039;</strong> - the &#039;Event preview screen&#039; view</div>
+<ul>
+<li class="level2"><div class="li"> <strong>&#039;eventBar&#039;</strong> - the top toolbar</div>
+</li>
+<li class="level2"><div class="li"> <strong>&#039;eventTemplate&#039;</strong> - the template with the data of an event</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>&#039;form&#039;</strong> - the &#039;Details form&#039; view</div>
+<ul>
+<li class="level2"><div class="li"> <strong>&#039;editBar&#039;</strong> - the toolbar</div>
+</li>
+<li class="level2"><div class="li"> <strong>&#039;editForm&#039;</strong> - the form with the details of an event</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>&#039;tabViews&#039;</strong> - the sub-multiview containing <strong>List</strong>, <strong>Day</strong> and <strong>Month</strong> views</div>
+<ul>
+<li class="level2"><div class="li"> <strong>&#039;bottomBar&#039;</strong> - the bottom toolbar</div>
+</li>
+<li class="level2"><div class="li"> <strong>&#039;list&#039;</strong> - the &#039;List&#039; view</div>
+</li>
+<li class="level2"><div class="li"> <strong>&#039;day&#039;</strong> -  the &#039;Day&#039; view</div>
+<ul>
+<li class="level3"><div class="li"> <strong>&#039;dayBar&#039;</strong> - the top toolbar</div>
+</li>
+<li class="level3"><div class="li"> <strong>&#039;dayList&#039;</strong> - the list with events</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>&#039;month&#039;</strong> - the &#039;Month&#039; view</div>
+<ul>
+<li class="level3"><div class="li"> <strong>&#039;calendar&#039;</strong> - the calendar </div>
+</li>
+<li class="level3"><div class="li"> <strong>&#039;calendarDayEvents&#039;</strong> - the list with events of the selected day</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+For example, if you want to show the &#039;Month&#039; view initially, you need to call the <strong>show()</strong> method for the &#039;month&#039; view and select the &#039;month&#039; button of the tabbar control on the bottom toolbar: 
+
+</p>
+<pre class="code javascript">$$<span class="br0">&#40;</span><span class="st0">'scheduler'</span><span class="br0">&#41;</span>.$$<span class="br0">&#40;</span><span class="st0">'month'</span><span class="br0">&#41;</span>.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+$$<span class="br0">&#40;</span><span class="st0">'scheduler'</span><span class="br0">&#41;</span>.$$<span class="br0">&#40;</span><span class="st0">'buttons'</span><span class="br0">&#41;</span>.<span class="me1">setValue</span><span class="br0">&#40;</span><span class="st0">'month'</span><span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> where &#039;month&#039; and &#039;buttons&#039; are the ids of the appropriate components of the scheduler.</div>
+</li>
+</ul>
+
+<p>
+
+The detail information about the mentioned components you can find in the DHTMLX Touch documentation - <br/>
+ <a href="http://www.google.com/search?q=touch_components&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=touch_components&amp;btnI=lucky">&#039;Master components&#039;</a>. 
+</p>
+
+</div>
+
+<h2><a name="a_custom_view" id="a_custom_view">A custom view</a></h2>
+<div class="level2">
+
+<p>
+It&#039;s possible to add a custom view to the main multiview of the scheduler. All you need to do is to add view configuration to the <strong><em>scheduler.config.views</em></strong> array. Beware, view configuration should go before the code line with scheduler initialization. 
+</p>
+
+<p>
+For example, if you&#039;d like to add a view that will contain a google map, it can be done as follows:
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">config</span>.<span class="me1">views</span>.<span class="me1">push</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+	view<span class="sy0">:</span><span class="st0">&quot;googlemap&quot;</span><span class="sy0">,</span>
+	id<span class="sy0">:</span><span class="st0">&quot;mymap&quot;</span>	
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+<strong>Related sample</strong>: <em>samples/01_basic/11_custom_view.html</em>
+
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

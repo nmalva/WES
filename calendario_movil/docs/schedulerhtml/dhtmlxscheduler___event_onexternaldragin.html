@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:event_onexternaldragin    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+<h2><a name="onexternaldragin_event" id="onexternaldragin_event">onExternalDragIn Event</a></h2>
+<div class="level2">
+
+<p>
+Parameters:
+</p>
+<ul>
+<li class="level1"><div class="li"> id - id of event</div>
+</li>
+<li class="level1"><div class="li"> source - source html object, which was dragged in the scheduler</div>
+</li>
+<li class="level1"><div class="li"> e - native <acronym title="Document Object Model">DOM</acronym> event object </div>
+</li>
+</ul>
+<pre class="code javascript">  scheduler.<span class="me1">attachEvent</span><span class="br0">&#40;</span><span class="st0">&quot;onExternalDragIn&quot;</span><span class="sy0">,</span> <span class="kw2">function</span> <span class="br0">&#40;</span>id<span class="sy0">,</span> source<span class="br0">&#41;</span><span class="br0">&#123;</span>
+         scheduler.<span class="me1">getEvent</span><span class="br0">&#40;</span>id<span class="br0">&#41;</span>.<span class="me1">text</span> <span class="sy0">=</span> source.<span class="me1">innerHTML</span>;
+         <span class="kw1">return</span> <span class="kw2">true</span>;
+  <span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Event can be used to customize newly created event ( which is a result of drag-in operation ) 
+<br/>
+
+Blockable, if event returns false - dragged in element will not produce a new event
+
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

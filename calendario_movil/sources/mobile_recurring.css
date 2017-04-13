@@ -1,0 +1,173 @@
+/*
+This software is allowed to use under GPL or you need to obtain Commercial or Enterise License
+to use it in non-GPL project. Please contact sales@dhtmlx.com for details
+*/
+/*datecells component*/
+.dhx_datecells .dhx_cell{
+	border:1px solid #848484;
+	border-width:0 1px 1px 0;
+	text-align:center;
+	font-weight:bold;
+	padding: 7px 0px;
+}
+.dhx_datecells .dhx_cell.first_row{
+	border-top:1px solid #848484;
+}
+.dhx_datecells .dhx_cell.first_column{
+	border-left:1px solid #848484;
+}
+.dhx_datecells{
+	margin-left:20px;
+	margin-top:10px;
+}
+.dhx_el_rectext {
+	display:inline-block;
+	font-size:18px;
+}
+.dhx_el_rectext input {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+
+
+/*delete button*/
+.dhx_recurring .delete .dhx_inp_form_button{
+	background: -webkit-gradient(linear, left top, left bottom, from(#cd7c7c), to(#931a1a));  
+	background: -moz-linear-gradient(top,  #cd7c7c,  #931a1a); 
+	border-top:1px solid #888;
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border:1px solid #8f8f8f;
+	color:#ffffff;
+	-moz-box-shadow:0 1px 1px #e7b6b6 inset, 0 1px #EBEBEB; 
+	-webkit-box-shadow:0 1px 1px #e7b6b6 inset, 0 1px #EBEBEB; 
+	box-shadow:0 1px 1px #e7b6b6 inset, 0 1px #EBEBEB; 
+}
+/*endless repeat button*/
+.dhx_recurring .endless_button .dhx_el_roundbutton input{
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+
+}
+
+/*list with rounded corners*/
+.dhx_recurring .dhx_rounded .dhx_scroll_cont{
+	margin:10px;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border:1px solid #ADADAD;
+	position:relative;
+}
+.dhx_recurring .dhx_rounded .dhx_scroll_cont > .dhx_list_item:first-child{
+	
+	-webkit-border-radius: 0px;
+	-webkit-border-top-right-radius: 9px;
+	-webkit-border-top-left-radius: 9px;
+	-moz-border-radius: 0px;
+	-moz-border-radius-topright: 9px;
+	-moz-border-radius-topleft: 9px;
+	border-radius: 0px;
+	border-top-right-radius: 9px;
+	border-top-left-radius: 9px;
+}
+.dhx_recurring .dhx_rounded .dhx_scroll_cont > .dhx_list_item:last-child{
+	
+	-webkit-border-radius: 0px;
+	-webkit-border-bottom-right-radius: 9px;
+	-webkit-border-bottom-left-radius: 9px;
+	-moz-border-radius: 0px;
+	-moz-border-radius-bottomright: 9px;
+	-moz-border-radius-bottomleft: 9px;
+	border-radius: 0px;
+	border-bottom-right-radius: 9px;
+	border-bottom-left-radius: 9px;
+	border-bottom-width:0px;
+}
+.dhx_recurring .dhx_rounded .dhx_list_item{
+	position:relative;
+}
+.dhx_recurring .dhx_list_item .dhx_arrow_icon{
+	background-image: url(imgs/images.png);
+ 	background-position: 0 -677px; /* 19_dark_arrow_right */
+	right: 17px;
+}
+.rec_list .dhx_list__item_selected{
+	background: -webkit-gradient(linear, left top, left bottom, from(#9dbcc7),to(#4f899d));  
+	background: -moz-linear-gradient(top,  #9dbcc7,  #518a9e);
+}
+
+/*Monthly*/
+.dhx_recurring .dhx_rec_table .dhx_cal_day_num{
+	border-color: #FCFCFC #CCCCCC #CCCCCC #FCFCFC;
+	border-width: 0 1px 1px 0;
+	font-weight: bold;
+}
+.dhx_accordionitem_header{
+	border-top-width:1px !important;
+	border-bottom-width:1px !important;
+}
+.dhx_recurring .dhx_el_label{
+	font-size:19px;
+}
+.dhx_recurring .dhx_accordionitem_header .blured{
+	color:#9c9c9c
+}
+.dhx_recurring .dhx_accordionitem_header .dhx_accordionitem_button.collapsed, .dhx_accordionitem_header .dhx_accordionitem_button{
+	background-position:0px 0px;
+	height: 27px;
+	width: 27px;
+
+}
+.dhx_recurring .dhx_accordionitem_header .dhx_accordionitem_button{
+	display:none;
+}
+.dhx_recurring .dhx_accordionitem_header .radio{
+	margin-top:8px;
+	margin-left:7px;
+	height: 24px;
+	width: 24px;
+	border-radius:13px;
+	-moz-border-radius:13px;
+	-webkit-border-radius:13px;
+	box-shadow: 0px 1px 1px 1px #e1e1e1;
+	-moz-box-shadow: 0px 1px 1px 1px #e1e1e1;
+	-webkit-box-shadow:0px 1px 1px 1px #e1e1e1;
+	border:1px solid #cacaca;
+	float:left;
+}
+.dhx_recurring .dhx_accordionitem_header .radio.blured{
+	margin-top:12px;
+}
+.dhx_recurring .dhx_accordionitem_header .radio .on{
+	margin: 6px 6px;
+	height: 12px;
+	width: 12px;
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	background: -moz-linear-gradient(center top , #A0BFC9, #4F899D);
+	background: -webkit-gradient(linear, left top, left bottom, from(#A0BFC9), to(#4F899D));  
+}
+.dhx_recurring .dhx_accordionitem_header .dhx_accordionitem_label .text{
+	padding-left:7px;
+	float:left;
+}
+
+
+
+/*radio button*/
+.dhx_recurring .dhx_inp_radio_on{
+	background-image: url(imgs_mobile/radio_on.png);
+	background-position:-7px -7px;
+}
+
+
+/*conter*/
+.dhx_recurring .dhx_inp_counter_prev, .dhx_recurring .dhx_inp_counter_next{
+	background: -webkit-gradient(linear, left top, left bottom, from(#9dbcc7),color-stop(0.4,#80a9b8),color-stop(0.6,#6799aa),to(#4f899d));  
+	background: -moz-linear-gradient(top,  #9dbcc7,  #518a9e);
+}

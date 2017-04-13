@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:ical_export_import    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h2><a name="ical_export_import" id="ical_export_import">iCal export/import</a></h2>
+<div class="level2">
+
+<p>
+You have the possibility to import/export data of iCal format by using either ready-to-use utility or <acronym title="Application Programming Interface">API</acronym> methods. 
+</p>
+
+<p>
+Download the <strong>iCal exporter</strong> utility:
+<a href="http://www.dhtmlx.com/docs/download/ical2scheduler.zip" class="urlextern" title="http://www.dhtmlx.com/docs/download/ical2scheduler.zip"  rel="nofollow">http://www.dhtmlx.com/docs/download/ical2scheduler.zip</a>
+</p>
+
+</div>
+
+<h3><a name="ical_exporter_front-end" id="ical_exporter_front-end">iCal exporter (Front-end)</a></h3>
+<div class="level3">
+
+<p>
+
+<img src="./images/dhtmlxschedulerical_exporter1.png" class="media" alt="" />
+</p>
+
+<p>
+The front-end of the utility consists of two parts:<strong> Resource configuration</strong> and <strong>Database configuration</strong>.
+In the first part you should set path to the data. You may do this by either choosing it from the opened dialog window (<strong>Ical file</strong>, the button “Overview”) or specifing the path mannually (<strong>Ical <acronym title="Uniform Resource Locator">URL</acronym></strong>).<br/>
+
+The second part contains the standart settings of the database which you want to save the iCal data in: host, database and table names, user&#039;s name and password. Also here you may set whether or not your old data must be deleted (<strong>Delete all data</strong>).
+</p>
+
+</div>
+
+<h3><a name="api_methods" id="api_methods">API Methods</a></h3>
+<div class="level3">
+
+<p>
+Here you can find all the <acronym title="Application Programming Interface">API</acronym> methods that can be used to implement iCal export/import in an app.
+ 
+
+</p>
+
+</div>
+
+<h4><a name="initialization" id="initialization">Initialization</a></h4>
+<div class="level4">
+
+<p>
+
+To initialize iCal exporter/importer you should use the following code:
+</p>
+<pre class="code php"><span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st0">&quot;codebase/class.php&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span> <span class="sy0">=</span> <span class="kw2">new</span> ICalExporter<span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> iCalendar import</div>
+</li>
+</ul>
+
+<p>
+You can import iCal data using the following:
+
+</p>
+<pre class="code php">setTitle<span class="br0">&#40;</span><span class="re0">$title</span><span class="br0">&#41;</span> <span class="co1">//sets title of ical file in toICal method</span>
+getTitle<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">//gets title of ical</span>
+toICal<span class="br0">&#40;</span><span class="re0">$events</span><span class="br0">&#41;</span> <span class="co1">//converts the information from the array or xml string to icalendar format</span></pre><ul>
+<li class="level1"><div class="li"> iCalendar export </div>
+</li>
+</ul>
+
+<p>
+You can export iCal data using the following:
+
+</p>
+<pre class="code php">toHash<span class="br0">&#40;</span><span class="re0">$ical</span><span class="br0">&#41;</span> <span class="co1">//converts ical string to array of events</span>
+toXML<span class="br0">&#40;</span><span class="re0">$ical</span><span class="br0">&#41;</span> <span class="co1">//converts ical string to XML</span></pre>
+</div>
+
+<h4><a name="examples" id="examples">Examples</a></h4>
+<div class="level4">
+
+<p>
+A number of code snippets that show how to execute iCal export/import are presented here.
+</p>
+<ul>
+<li class="level1"><div class="li"> Setting iCalendar title </div>
+</li>
+</ul>
+
+<p>
+The following code allows you to set the title of imported/exported iCalendar data.
+
+</p>
+<pre class="code php"><span class="re0">$xml</span> <span class="sy0">=</span> <a href="http://www.php.net/file_get_contents"><span class="kw3">file_get_contents</span></a><span class="br0">&#40;</span><span class="st0">&quot;events_rec.xml&quot;</span><span class="br0">&#41;</span>;
+<span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st0">&quot;codebase/class.php&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span> <span class="sy0">=</span> <span class="kw2">new</span> ICalExporter<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span><span class="sy0">-&gt;</span><span class="me1">setTitle</span><span class="br0">&#40;</span><span class="st0">&quot;Calendar name&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$ical</span> <span class="sy0">=</span> <span class="re0">$export</span><span class="sy0">-&gt;</span><span class="me1">toICal</span><span class="br0">&#40;</span><span class="re0">$xml</span><span class="br0">&#41;</span>;
+file_put_contents<span class="br0">&#40;</span><span class="st0">&quot;ical.ics&quot;</span><span class="sy0">,</span> <span class="re0">$ical</span><span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> Array of events</div>
+</li>
+</ul>
+
+<p>
+It&#039;s an example of events&#039; array that is reffered in import/export data from/to array.
+</p>
+<pre class="code php"><span class="re0">$events</span> <span class="sy0">=</span> <a href="http://www.php.net/array"><span class="kw3">array</span></a><span class="br0">&#40;</span>
+	<a href="http://www.php.net/array"><span class="kw3">array</span></a><span class="br0">&#40;</span>
+		<span class="st0">&quot;id&quot;</span> <span class="sy0">=&gt;</span> <span class="nu0">1</span><span class="sy0">,</span>
+		<span class="st0">&quot;start_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-05 08:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;end_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2012-04-09 09:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;text&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;text1&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;rec_type&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;week_2___3,5&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_pid&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_length&quot;</span> <span class="sy0">=&gt;</span> <span class="nu0">3600</span>
+	<span class="br0">&#41;</span><span class="sy0">,</span>
+&nbsp;
+	<a href="http://www.php.net/array"><span class="kw3">array</span></a><span class="br0">&#40;</span>
+		<span class="st0">&quot;id&quot;</span> <span class="sy0">=&gt;</span> <span class="nu0">2</span><span class="sy0">,</span>
+		<span class="st0">&quot;start_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-06 12:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;end_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-06 18:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;text&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;text2&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;rec_type&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_pid&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_length&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span>
+	<span class="br0">&#41;</span><span class="sy0">,</span>
+&nbsp;
+	<a href="http://www.php.net/array"><span class="kw3">array</span></a><span class="br0">&#40;</span>
+		<span class="st0">&quot;id&quot;</span> <span class="sy0">=&gt;</span> <span class="nu0">3</span><span class="sy0">,</span>
+		<span class="st0">&quot;start_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-07 12:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;end_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-07 18:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;text&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;text3&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;rec_type&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_pid&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_length&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span>
+	<span class="br0">&#41;</span><span class="sy0">,</span>
+&nbsp;
+	<a href="http://www.php.net/array"><span class="kw3">array</span></a><span class="br0">&#40;</span>
+		<span class="st0">&quot;id&quot;</span> <span class="sy0">=&gt;</span> <span class="nu0">4</span><span class="sy0">,</span>
+		<span class="st0">&quot;start_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-08 12:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;end_date&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;2010-04-08 18:00:00&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;text&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;text4&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;rec_type&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;&quot;</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_pid&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span><span class="sy0">,</span>
+		<span class="st0">&quot;event_length&quot;</span> <span class="sy0">=&gt;</span> <span class="kw2">null</span>
+	<span class="br0">&#41;</span>
+<span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> From Array to iCal </div>
+</li>
+</ul>
+
+<p>
+This code you may use to export data from array to iCal.
+
+</p>
+<pre class="code php"><span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st0">&quot;codebase/class.php&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span> <span class="sy0">=</span> <span class="kw2">new</span> ICalExporter<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="re0">$ical</span> <span class="sy0">=</span> <span class="re0">$export</span><span class="sy0">-&gt;</span><span class="me1">toICal</span><span class="br0">&#40;</span><span class="re0">$events</span><span class="br0">&#41;</span>;
+file_put_contents<span class="br0">&#40;</span><span class="st0">&quot;ical.ics&quot;</span><span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> From <acronym title="Extensible Markup Language">XML</acronym> to iCal </div>
+</li>
+</ul>
+
+<p>
+This code you may use to export data from <acronym title="Extensible Markup Language">XML</acronym> to iCal.
+
+</p>
+<pre class="code php"><span class="re0">$xml</span> <span class="sy0">=</span> <a href="http://www.php.net/file_get_contents"><span class="kw3">file_get_contents</span></a><span class="br0">&#40;</span><span class="st0">&quot;events_rec.xml&quot;</span><span class="br0">&#41;</span>;
+<span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st0">&quot;codebase/class.php&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span> <span class="sy0">=</span> <span class="kw2">new</span> ICalExporter<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="re0">$ical</span> <span class="sy0">=</span> <span class="re0">$export</span><span class="sy0">-&gt;</span><span class="me1">toICal</span><span class="br0">&#40;</span><span class="re0">$xml</span><span class="br0">&#41;</span>;
+file_put_contents<span class="br0">&#40;</span><span class="st0">&quot;ical.ics&quot;</span><span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> From iCal to Array </div>
+</li>
+</ul>
+
+<p>
+This code you may use to export data from iCal to array.
+
+</p>
+<pre class="code php"><span class="re0">$ical</span> <span class="sy0">=</span> <a href="http://www.php.net/file_get_contents"><span class="kw3">file_get_contents</span></a><span class="br0">&#40;</span><span class="st0">&quot;ical.ics&quot;</span><span class="br0">&#41;</span>;
+<span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st0">&quot;codebase/class.php&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span> <span class="sy0">=</span> <span class="kw2">new</span> ICalExporter<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="re0">$events</span> <span class="sy0">=</span> <span class="re0">$export</span><span class="sy0">-&gt;</span><span class="me1">toHash</span><span class="br0">&#40;</span><span class="re0">$ical</span><span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> From iCal to <acronym title="Extensible Markup Language">XML</acronym> </div>
+</li>
+</ul>
+
+<p>
+This code you may use to export data from iCal to <acronym title="Extensible Markup Language">XML</acronym>.
+
+</p>
+<pre class="code php"><span class="re0">$ical</span> <span class="sy0">=</span> <a href="http://www.php.net/file_get_contents"><span class="kw3">file_get_contents</span></a><span class="br0">&#40;</span><span class="st0">&quot;ical.ics&quot;</span><span class="br0">&#41;</span>;
+<span class="kw1">require_once</span><span class="br0">&#40;</span><span class="st0">&quot;codebase/class.php&quot;</span><span class="br0">&#41;</span>;
+<span class="re0">$export</span> <span class="sy0">=</span> <span class="kw2">new</span> ICalExporter<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="re0">$xml</span> <span class="sy0">=</span> <span class="re0">$export</span><span class="sy0">-&gt;</span><span class="me1">toXML</span><span class="br0">&#40;</span><span class="re0">$ical</span><span class="br0">&#41;</span>;
+file_put_contents<span class="br0">&#40;</span><span class="st0">&quot;events_rec.xml&quot;</span><span class="sy0">,</span> <span class="re0">$xml</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

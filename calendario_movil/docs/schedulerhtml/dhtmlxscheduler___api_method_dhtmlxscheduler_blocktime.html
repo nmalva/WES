@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:api_method_dhtmlxscheduler_blocktime    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+<h2><a name="blocktime_date_time_points" id="blocktime_date_time_points">blockTime(date, time_points)</a></h2>
+<div class="level2">
+
+<p>
+
+<em>Required library edition:</em> <img src="./images/commonany_ed.gif" class="media" title="This method works with any edition of DHTMLX library" alt="This method works with any edition of DHTMLX library" /><br/>
+ <em>Required library file: dhtmlxscheduler_limit.js</em>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> date — js date object, or number ( if number provided - it will be treated as day of week )</div>
+</li>
+<li class="level2"><div class="li"> time_points - array of time points, or “fullday” string</div>
+</li>
+</ul>
+
+<p>
+
+Mark specified time slots as disabled, blocks new event creation in that time. 
+</p>
+<pre class="code javascript"><span class="co1">//disallow any event for specific day</span>
+scheduler.<span class="me1">blockTime</span><span class="br0">&#40;</span><span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">2009</span><span class="sy0">,</span><span class="nu0">5</span><span class="sy0">,</span><span class="nu0">30</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="st0">&quot;fullday&quot;</span><span class="br0">&#41;</span>;
+<span class="co1">//disallow events from 0 till 10 hours, for specific date</span>
+scheduler.<span class="me1">blockTime</span><span class="br0">&#40;</span><span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">2009</span><span class="sy0">,</span><span class="nu0">6</span><span class="sy0">,</span><span class="nu0">3</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="br0">&#91;</span>0<span class="sy0">,</span><span class="nu0">10</span><span class="sy0">*</span><span class="nu0">60</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+<span class="co1">//disallow events from 0 till 8 and from 18 till 24 hours, for saturday</span>
+scheduler.<span class="me1">blockTime</span><span class="br0">&#40;</span><span class="nu0">6</span><span class="sy0">,</span> <span class="br0">&#91;</span>0<span class="sy0">,</span><span class="nu0">8</span><span class="sy0">*</span><span class="nu0">60</span><span class="sy0">,</span><span class="nu0">18</span><span class="sy0">*</span><span class="nu0">60</span><span class="sy0">,</span><span class="nu0">24</span><span class="sy0">*</span><span class="nu0">60</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+<span class="co1">//disallow any event for specific week-day (sunday)</span>
+scheduler.<span class="me1">blockTime</span><span class="br0">&#40;</span>0<span class="sy0">,</span> <span class="st0">&quot;fullday&quot;</span><span class="sy0">,</span><span class="st0">&quot;weekly&quot;</span><span class="br0">&#41;</span>;</pre>
+
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:external_plugin:wordpress    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="dhtmlxscheduler_for_the_wordpress" id="dhtmlxscheduler_for_the_wordpress">dhtmlxScheduler for the Wordpress</a></h1>
+<div class="level1">
+
+<p>
+To use the Scheduler plugin in WordPress you should perform the following actions:
+</p>
+<ol>
+<li class="level1"><div class="li"> ;</div>
+</li>
+<li class="level1"><div class="li"> ;</div>
+</li>
+<li class="level1"><div class="li"> .</div>
+</li>
+</ol>
+
+<p>
+
+Download links:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://wordpress.org/download/" class="urlextern" title="http://wordpress.org/download/"  rel="nofollow">The most recent version of Wordpress</a>;</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://wordpress.org/extend/plugins/event-calendar-scheduler/" class="urlextern" title="http://wordpress.org/extend/plugins/event-calendar-scheduler/"  rel="nofollow">The plugin package</a>.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="what_s_new_version_3.0" id="what_s_new_version_3.0">What&#039;s new? Version 3.0</a></h2>
+<div class="level2">
+
+<p>
+The release 3.0 brought a number of new features to the Scheduler plugins: has fixed all bugs and problems detected since the previous version, improved the security aspects and added new configuration options. 
+</p>
+
+<p>
+<strong>New features:</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Import/Export to <strong>Google Calendar</strong>.</div>
+</li>
+<li class="level1"><div class="li"> 2 new available views: <strong>Week agenda</strong> and <strong>Map</strong> view.</div>
+</li>
+<li class="level1"><div class="li"> The possibility to<strong> hide columns in the Unit view</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Special template providing <strong>the name of the event author</strong>.</div>
+</li>
+<li class="level1"><div class="li"> The possibility to show the <strong>second scale in the Timeline view</strong>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Skin styling</strong>. You can set any color scheme for your scheduler.</div>
+</li>
+<li class="level1"><div class="li"> Button <strong>Print to <acronym title="Portable Document Format">PDF</acronym></strong>. Now you needn&#039;t to add any additional files, just enable the related option on the control panel and the button invoking export will be added to the sheduler.</div>
+</li>
+<li class="level1"><div class="li"> Button <strong>Export to iCal</strong>. It also allows you to provide export with none extra files added. </div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="installing_the_plugin" id="installing_the_plugin">Installing the plugin</a></h2>
+<div class="level2">
+
+<p>
+WordPress offers the following way of adding the plugin to your page (the Google Chrome browser is used):
+</p>
+<ul>
+<li class="level1"><div class="li"> Download the <strong>Scheduler</strong> package to your local machine as a zip file;</div>
+</li>
+<li class="level1"><div class="li"> From the <em>Administration panel</em> click on the <strong>Plugins</strong> tab;</div>
+</li>
+<li class="level1"><div class="li"> Select <strong>Add New</strong>;</div>
+</li>
+<li class="level1"><div class="li"> From the <em>Workspace</em> click on the <strong>Upload</strong> tab;</div>
+</li>
+<li class="level1"><div class="li"> From the <em>tab</em> click the button <strong>Choose file</strong> and choose the directory to your plugin package in the opened browse window; </div>
+</li>
+<li class="level1"><div class="li"> Click the button <strong>Install Now</strong>. </div>
+</li>
+</ul>
+
+<p>
+
+<img src="./images/dhtmlxschedulerexternal_plugininstalling_the_plugin.png" class="media" alt="" />
+
+</p>
+
+</div>
+
+<h2><a name="activating_the_plugin" id="activating_the_plugin">Activating the plugin</a></h2>
+<div class="level2">
+
+<p>
+
+Once you have uploaded the plugin to your WordPress plugin directory, you should activate it from the <em>Plugins Management</em> page.
+</p>
+<ul>
+<li class="level1"><div class="li"> From the <em>Administration panel</em> click on the <strong>Plugins</strong> tab;</div>
+</li>
+<li class="level1"><div class="li"> Select <strong>Plugins</strong>; </div>
+</li>
+<li class="level1"><div class="li"> To turn the plugin on, click <strong>Activate</strong> in the same row as the Scheduler plugin entry.</div>
+</li>
+</ul>
+
+<p>
+
+<img src="./images/dhtmlxschedulerexternal_pluginactivating_the_plugin.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h2><a name="using_the_plugin" id="using_the_plugin">Using the plugin</a></h2>
+<div class="level2">
+
+<p>
+
+Please note, the following users groups can edit Scheduler:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Administrator;</div>
+</li>
+<li class="level1"><div class="li">  Editor.</div>
+</li>
+</ul>
+
+<p>
+
+<strong>To add Scheduler to a post or a page</strong> you should insert the appropriate Scheduler marker:
+</p>
+<pre class="code">
+You can insert any text before
+[[scheduler_plugin]]
+or after scheduler instance
+</pre>
+
+<p>
+The plugin provides a special button <img src="./images/dhtmlxschedulerexternal_pluginnew_event_button.png" class="media" alt="" /> in the <em>workspace</em>. It allows you to add events and place the links to them on the page.
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginadding_events_plugin.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h3><a name="configuration" id="configuration">Configuration</a></h3>
+<div class="level3">
+
+<p>
+Scheduler can be configured through the admin panel available from the <strong>Plugin</strong> tab (the <strong>Scheduler</strong> entry). Read more on the topic in article <strong><a href="dhtmlxscheduler___external_plugin___universal_plugin_control_panel.html" class="wikilink1" title="dhtmlxscheduler:external_plugin:universal_plugin_control_panel">Universal plugin control panel</a></strong>.
+</p>
+
+</div>
+
+<h3><a name="upcoming_events_widget" id="upcoming_events_widget">&#039;Upcoming events&#039; widget</a></h3>
+<div class="level3">
+
+<p>
+The plugin provides a widget allowing you to present upcoming events on the page.
+You can get the widget from <strong>Appearance→Widgets→Upcoming events</strong>.
+</p>
+
+<p>
+The appearance of the sidebar can be customizes  by changing template <strong>sidebar.php</strong> placed in the package. 
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginupcoming_events_img.png" class="media" alt="" />
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

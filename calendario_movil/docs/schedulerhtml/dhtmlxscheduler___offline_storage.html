@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:offline_storage    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="offline_storage" id="offline_storage">Offline storage</a></h1>
+<div class="level1">
+
+<p>
+In this article we want to tell you how to make an application be accessible offline and don&#039;t depend on the state of the network. 
+</p>
+
+<p>
+Generally, to make an app work in the offline mode you should use the <strong>dhx.proxy</strong> component. The component allows you to send web requests via <acronym title="Hyper Text Transfer Protocol">HTTP</acronym> proxy and store the latest successful data files and unsuccessful web requests locally. 
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerdhx.proxy_image.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h2><a name="how_does_an_application_using_dhx.proxy_work" id="how_does_an_application_using_dhx.proxy_work">How does an application using dhx.proxy work?</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="loading_data" id="loading_data">Loading data</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Each time data needs loading, the app passes a request to the server via proxy-server. If the server is available - data is loaded from it and cached as the latest copy. If the server is unavailable - data is loaded from the local storage. </div>
+</li>
+<li class="level1"><div class="li"> Note that the local storage contains data just if the app was run with available connection to the Internet at least once.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a name="crud_operations" id="crud_operations">CRUD operations</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> When a user makes a request for update, it (the request) is passed to the server via proxy-server. If the request is satisfied - it updates the latest copy. If the request isn&#039;t satisfied - it&#039;s cached in the local storage.  </div>
+</li>
+<li class="level1"><div class="li"> Each time a user makes a request, <strong>dhx.proxy</strong> checks presence of unsuccessful requests in the local storage. If there are any kept - they are passed to the server.</div>
+</li>
+<li class="level1"><div class="li"> As soon as an unsuccessful request is satisfied - it updates the latest copy and is removed from the local storage.</div>
+</li>
+</ul>
+
+<p>
+
+<div class='dhx_note'><div class='dhx_note_img'>&nbsp;</div>
+To cache not only the entered data, but also the application resources (js, css files, images etc.) you may use dhx.proxy together with the ApplicationCache interface (HTML5 feature). 
+</div>
+</p>
+
+</div>
+
+<h2><a name="how_to_use_dhx.proxy" id="how_to_use_dhx.proxy">How to use dhx.proxy?</a></h2>
+<div class="level2">
+
+<p>
+<strong>dhx.proxy</strong> is an easy-to-use component.<br/>
+ To start use it:
+</p>
+<ul>
+<li class="level1"><div class="li"> ;</div>
+</li>
+<li class="level1"><div class="li"> set the <strong>dhx.proxy</strong> instance as:</div>
+<ul>
+<li class="level2"><div class="li"> the <strong>save</strong> parameter  of the object constructor;</div>
+</li>
+<li class="level2"><div class="li"> the <strong>url</strong> parameter of the <strong>load</strong> method.</div>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="code javascript"><span class="kw2">var</span> source <span class="sy0">=</span> <span class="kw2">new</span> dhx.<span class="me1">proxy</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+	url<span class="sy0">:</span> <span class="st0">&quot;../data/events_mobile.php&quot;</span><span class="sy0">,</span>
+	storage<span class="sy0">:</span> dhx.<span class="me1">storage</span>.<span class="me1">session</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+dhx.<span class="me1">ready</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+        dhx.<span class="me1">ui</span>.<span class="me1">fullScreen</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    	dhx.<span class="me1">ui</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span> <span class="st0">&quot;scheduler&quot;</span><span class="sy0">,</span>
+		id<span class="sy0">:</span> <span class="st0">&quot;scheduler&quot;</span><span class="sy0">,</span>
+		save<span class="sy0">:</span> source
+	<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+	$$<span class="br0">&#40;</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>.<span class="me1">load</span><span class="br0">&#40;</span>source<span class="sy0">,</span> <span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+
+<strong>Related sample:</strong> <em>samples/03_offilne/01_offline.html</em>
+</p>
+
+</div>
+
+<h2><a name="initialization" id="initialization">Initialization</a></h2>
+<div class="level2">
+
+<p>
+<strong>dhx.proxy</strong> can be initialized in the following way:
+
+</p>
+<pre class="code javascript"><span class="kw2">var</span> source <span class="sy0">=</span> <span class="kw2">new</span> dhx.<span class="me1">proxy</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+	  url<span class="sy0">:</span> <span class="st0">&quot;./data.php&quot;</span><span class="sy0">,</span>
+	  storage<span class="sy0">:</span> dhx.<span class="me1">storage</span>.<span class="me1">session</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+
+The constructor takes 2 parameters:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>url</strong> - (<em>url</em>) defines the path to a php file that defines server side logic.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>storage</strong> - (<em>dhx.storage.local</em>, <em>dhx.storage.session</em>, <em>dhx.storage.cookie</em>) specifies the data storage type. It&#039;s an optional parameter. The default value - <em>dhx.storage.local</em>.</div>
+</li>
+</ul>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

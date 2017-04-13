@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:sizes_of_elements    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="sizes_of_elements" id="sizes_of_elements">Sizes of elements</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="common_information" id="common_information">Common information</a></h2>
+<div class="level2">
+
+<p>
+In the scheduler you are allowed to configure formats (using in dates) and sizes of the elements. 
+</p>
+
+<p>
+To set the desired option, just write it as it&#039;s stated in this documentation. Beware, configuration options should go  before the code line with scheduler initialization.
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">xy</span>.<span class="me1">confirm_height</span> <span class="sy0">=</span> <span class="nu0">300</span>;
+scheduler.<span class="me1">xy</span>.<span class="me1">confirm_width</span> <span class="sy0">=</span> <span class="nu0">300</span>;
+<span class="co1">//configuration options should go before the scheduler constructor</span>
+dhx.<span class="me1">ui</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+	view<span class="sy0">:</span> <span class="st0">&quot;scheduler&quot;</span><span class="sy0">,</span>
+	id<span class="sy0">:</span> <span class="st0">&quot;scheduler&quot;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+$$<span class="br0">&#40;</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;../scheduler/mobile.xml&quot;</span><span class="sy0">,</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h2><a name="dimension_configuration" id="dimension_configuration">Dimension configuration</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>scheduler.xy.confirm_height</strong> - (integer) the height of the confirm window (by default, 231)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.confirm_width</strong>  - (integer) the width of the confirm window (by default, 250)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.scale_width</strong> - (integer) the total width of the hour and minute columns in the &#039;day&#039; view. The width is divided equally between the columns (by default, 45)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.scale_height</strong> - (integer) the width of a row in the &#039;day&#039; view (by default, 15)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.list_tab</strong> - (integer) the width of the &#039;List&#039; tab in the bottom tab bar (by default,54)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.day_tab</strong> - (integer) the width of the &#039;Day&#039; tab in the bottom tab bar (by default,54)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.month_tab</strong> - (integer) the width of the &#039;Month&#039; tab in the bottom tab bar (by default,68)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.icon_today</strong> - (integer) the width of the &#039;Today&#039; button in the bottom tab bar (by default,72)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.icon_save</strong> - (integer) the width of the &#039;Save&#039; button (by default,100)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.icon_cancel</strong> - (integer) the width of the &#039;Cancel&#039; button (by default,100)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.icon_done</strong> - (integer) the width of the &#039;Done&#039; button (by default,100)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.icon_edit</strong> - (integer) the width of the &#039;Edit&#039; button (by default,100)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.icon_back</strong> - (integer) the width of the &#039;Back&#039; button (by default,100)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.list_height</strong> - (integer) the height of a row in the &#039;list&#039; view (by default,42)</div>
+</li>
+<li class="level1"><div class="li"> <strong>scheduler.xy.month_list_height</strong> - (integer) the height of a row in the &#039;month&#039; view (by default,42)</div>
+</li>
+</ul>
+
+<p>
+
+<img src="./images/dhtmlxschedulerxy_configuration.png" class="media" alt="" />
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

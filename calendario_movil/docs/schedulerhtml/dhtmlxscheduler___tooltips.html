@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:tooltips    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+<h2><a name="tooltips" id="tooltips">Tooltips</a></h2>
+<div class="level2">
+
+<p>
+This extension allows to create tooltips over events in the scheduler which could be used to display additional information about event without need to actually &#039;open&#039; event to check it.
+</p>
+
+<p>
+To activate extension you need to include the dhtmlxscheduler_tooltip.js file:
+
+</p>
+<pre class="code javascript"><span class="sy0">&lt;</span>script src<span class="sy0">=</span><span class="st0">&quot;codebase/ext/dhtmlxscheduler_tooltip.js&quot;</span><span class="sy0">&gt;&lt;/</span>script<span class="sy0">&gt;</span></pre>
+<p>
+After that tooltips will be displayed with the default settings:<br/>
+
+<img src="./images/dhtmlxschedulerbasic_tooltip.png" class="media" alt="" />
+</p>
+
+<p>
+It&#039;s possible to configure and customize several parameters of the tooltip window:
+
+</p>
+<pre class="code javascript">dhtmlXTooltip.<span class="me1">config</span>.<span class="me1">className</span> <span class="sy0">=</span> <span class="st0">'dhtmlXTooltip tooltip'</span>; <span class="co1">// sets the CSS classname of the tooltip window</span>
+dhtmlXTooltip.<span class="me1">config</span>.<span class="me1">timeout_to_display</span> <span class="sy0">=</span> <span class="nu0">50</span>; <span class="co1">// delay of the rendering</span>
+dhtmlXTooltip.<span class="me1">config</span>.<span class="me1">delta_x</span> <span class="sy0">=</span> <span class="nu0">15</span>; <span class="co1">// X position relative to the cursor (positive - margin to the right, negative - to the left)</span>
+dhtmlXTooltip.<span class="me1">config</span>.<span class="me1">delta_y</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">20</span>; <span class="co1">// Y position relative to the cursor (positive - above the cursor, negative - below)</span></pre>
+<p>
+Special template <strong>scheduler.templates.tooltip_text</strong> is handling what should be displayed inside tooltip, it&#039;s possible to redefine it:
+
+</p>
+<pre class="code javascript"><span class="kw2">var</span> format<span class="sy0">=</span>scheduler.<span class="me1">date</span>.<span class="me1">date_to_str</span><span class="br0">&#40;</span><span class="st0">&quot;%Y-%m-%d %H:%i&quot;</span><span class="br0">&#41;</span>; 
+scheduler.<span class="me1">templates</span>.<span class="me1">tooltip_text</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>start<span class="sy0">,</span>end<span class="sy0">,</span>event<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">return</span> <span class="st0">&quot;&lt;b&gt;Event:&lt;/b&gt; &quot;</span><span class="sy0">+</span>event.<span class="me1">text</span><span class="sy0">+</span><span class="st0">&quot;&lt;br/&gt;&lt;b&gt;Start date:&lt;/b&gt; &quot;</span><span class="sy0">+</span>format<span class="br0">&#40;</span>start<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;&lt;br/&gt;&lt;b&gt;End date:&lt;/b&gt; &quot;</span><span class="sy0">+</span>format<span class="br0">&#40;</span>end<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

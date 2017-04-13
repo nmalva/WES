@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:external_plugin:universal_plugin_control_panel    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="universal_plugin_control_panel" id="universal_plugin_control_panel">Universal plugin control panel</a></h1>
+<div class="level1">
+
+<p>
+The control panel of the plugin has 8 panes:
+
+</p>
+<ol>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+</ol>
+
+<p>
+
+Before changing anything, beware that settings will be applied only after pressing the &#039;<strong>Save changes</strong>&#039; button. 
+If you leave the page without saving - all changes will be lost.
+</p>
+
+</div>
+
+<h3><a name="settings" id="settings">Settings</a></h3>
+<div class="level3">
+
+<p>
+The pane contains general configuration options.
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpanesettings.png" class="media" alt="" />
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Sizes</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong><em>Scheduler width</em></strong>  - the width of the scheduler on the page.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Scheduler height</em></strong> - the height of the scheduler on the page.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Wordpress Specific</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong><em>Link to the Scheduler</em></strong> - the path to the page where the scheduler will be placed on.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Show blog posts as events</em></strong> - defines whether blog posts will be added to the scheduler as events.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Modes</strong> - contains available views. Check those of them which tabs you want to present in your scheduler.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Debug</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong><em>Debug mode</em></strong> - allows you to get detailed reports when data is not loaded or not saved correctly.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>General settings</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong><em>Repeat events</em></strong> - enables support of recurring events.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Sunday is the first day of the week</em></strong> - specifies whether a week will be started from Sunday (check the option) or from Monday (leave the box unchecked).</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Multiday events in day and week views</em></strong> - enables support of multi-day events.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Full day events</em></strong> - if the option is enabled then entry fields in the &#039;Time period&#039; section of the lightbox while creating events will be blocked and the time period will be set to the full day from 00.00 the current cell date untill 00.00 next day. </div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Mark now</em></strong> - if the option is enabled then the day and week views will have marker displaying the current time.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Create events by single-click</em></strong> - allows creating new events by a single click. </div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Prevent overlapping</em></strong> - allows only one event in the same timeslot.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Expand button</em></strong> - adds the expand button, allowing you to view the scheduler in full screen.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Print to <acronym title="Portable Document Format">PDF</acronym></em></strong> - adds the button that will invoke exporting to <acronym title="Portable Document Format">PDF</acronym>.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Print to iCal</em></strong> - adds the button that will invoke exporting to iCal.</div>
+</li>
+<li class="level2"><div class="li"> <strong><em>Mini-calendar navigation</em></strong> - adds the mini-calendar control to the toolbar for setting the scheduler date.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3><a name="access_rights" id="access_rights">Access rights</a></h3>
+<div class="level3">
+
+<p>
+This is the pane for managing users rights for adding/editing/deleting events.
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpanerights.png" class="media" alt="" />
+</p>
+
+<p>
+The pane allows you to define the access level for different groups of users:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Add</strong> - ability to create new events.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Edit</strong> - ability to edit existing events.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Show</strong> - ability to see the scheduler.</div>
+</li>
+</ul>
+
+<p>
+
+And set the private mode:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>off</strong> - events are public. Users see and can edit (if the appropriate check is set) all events.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Private mode</strong> - users see and can edit (if the appropriate check is set) just self-created events.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Private extended mode</strong> - users see all events but can edit (if the appropriate check is set) just self-created ones.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a name="templates" id="templates">Templates</a></h3>
+<div class="level3">
+
+<p>
+This pane lets you define different templates that can be used to change dispaying dates and titles in the scheduler. 
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpanetemplates.png" class="media" alt="" />
+</p>
+
+<p>
+You can define templates for: 
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Dates</strong>.</div>
+<ul>
+<li class="level2"><div class="li"> <a href="dhtmlxscheduler___settings_format.html" class="urlextern" title="http://docs.dhtmlx.com/doku.php?id=dhtmlxscheduler:settings_format"  rel="nofollow">http://docs.dhtmlx.com/doku.php?id=dhtmlxscheduler:settings_format</a> </div>
+</li>
+<li class="level2"><div class="li"> <a href="dhtmlxscheduler___settings_config.html" class="urlextern" title="http://docs.dhtmlx.com/doku.php?id=dhtmlxscheduler:settings_config"  rel="nofollow">http://docs.dhtmlx.com/doku.php?id=dhtmlxscheduler:settings_config</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Time scales</strong>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Events</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong><em>Render event author name</em></strong> - allows you to display the name of the event author.<br/>
+ Once you have enabled the option  - the client start to receive the login of the user created the event,  in addition to the standard set: the text, the start and end dates.  Also templates will be supplemented with the related text to display the author name in events.<br/>
+ If you then disable the option - the login name will stop being passed and displayed in the events.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+
+For more information of available templates and their syntax, please follow the <strong>“See more about date formats here”</strong> link in the bottom right corner of the related section.
+</p>
+
+</div>
+
+<h3><a name="events_administration" id="events_administration">Events administration</a></h3>
+<div class="level3">
+
+<p>
+The pane shows the list of all events and allows you to add/edit/delete them there. 
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpaneevents.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h3><a name="custom_fields" id="custom_fields">Custom fields</a></h3>
+<div class="level3">
+
+<p>
+The pane allows you to add custom fields to the lightbox. 
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpanefields.png" class="media" alt="" />
+</p>
+
+<p>
+There are two types of custom fields:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Textarea</strong> - a text field.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Select list</strong> - a select box with the list of options.</div>
+</li>
+</ul>
+
+<p>
+
+Each field can have:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Name</strong> - the name of the field in DB ( will be created automatically )</div>
+</li>
+<li class="level1"><div class="li"> <strong>Description</strong> - the title of the field in the lightbox.</div>
+</li>
+</ul>
+
+<p>
+
+The <strong>select list</strong> fields have some extra flags:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Use colors for events</strong> - allows you to define what color events will have depending on the option selected in the field.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Use as Units</strong> - adds the unit view based on the list of options to the scheduler.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Timeline type</strong>  - adds the timeline view with one of the following time-scale units:</div>
+<ul>
+<li class="level2"><div class="li"> <em><strong>Day</strong></em></div>
+</li>
+<li class="level2"><div class="li"> <em><strong>Working Day</strong></em></div>
+</li>
+<li class="level2"><div class="li"> <em><strong>3 days</strong></em></div>
+</li>
+<li class="level2"><div class="li"> <em><strong>Week</strong></em></div>
+</li>
+<li class="level2"><div class="li"> <em><strong>Working week</strong></em></div>
+</li>
+<li class="level2"><div class="li"> <em><strong>Month</strong></em></div>
+</li>
+<li class="level2"><div class="li"> <em><strong>Year</strong></em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Timeline second scale</strong> - allows you to add the second scale to the Timeline view.</div>
+</li>
+</ul>
+
+<p>
+
+Note, you can use the <strong>hide</strong> column to not display some column in the scheduler.
+</p>
+
+</div>
+
+<h3><a name="google_calendar_export" id="google_calendar_export">Google calendar export</a></h3>
+<div class="level3">
+
+<p>
+Provides the synchronization with Google Calendar and allows you to <em>import to</em> or <em>export from</em> Google Calendar.<br/>
+ Fill up the fields with account information and click the button appropriate to your needs. If the information entered by you is correct you&#039;ll see message &#039;<strong>Well done</strong>&#039;.
+</p>
+
+<p>
+To pass data from DHTMLX Scheduler to Google Calendar - click button &#039;<strong>Export</strong>&#039;.<br/>
+
+To pass data from Google Calendar to DHTMLX Scheduler - click button &#039;<strong>Import</strong>&#039;.
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpanegooglecalendar.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h3><a name="skinning" id="skinning">Skinning</a></h3>
+<div class="level3">
+
+<p>
+The pane is for styling the scheduler.<br/>
+ Select the desired color scheme (can use one of presets) and click the button &#039;<strong>Apply</strong>&#039;.  The scheme will be set and you can preview the gotten result in the right section.<br/>
+ Beware, if the option <strong>Use custom color</strong> is unchecked  -  your selected color won&#039;t be applied.
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerexternal_pluginpaneskinning.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h3><a name="for_advanced_users" id="for_advanced_users">For advanced users</a></h3>
+<div class="level3">
+
+<p>
+For advanced users we offer extra possibility - to wide available functionality.<br/>
+
+All you need -<strong> scheduler_include.html</strong> file (you can find it in the plugin&#039;s folder: <em>you_wordpress/wp-content/plugins/event-calendar-scheduler/scheduler_include.html</em>).<br/>
+
+How does it work?<br/>
+
+You add the desired additions to the file. Essentially, it&#039;s all. To the page the contents will be added automatically (the file is included to the page on default). 
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

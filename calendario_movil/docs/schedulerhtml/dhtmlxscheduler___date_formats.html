@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:date_formats    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+<h3><a name="date_converters" id="date_converters">Date Converters</a></h3>
+<div class="level3">
+
+<p>
+
+You can generate a date convert function as follows:
+
+</p>
+<pre class="code javascript"><span class="kw2">var</span> convert <span class="sy0">=</span> scheduler.<span class="me1">date</span>.<span class="me1">date_to_str</span><span class="br0">&#40;</span><span class="st0">&quot;%format%&quot;</span><span class="br0">&#41;</span>;
+some_string <span class="sy0">=</span> convert<span class="br0">&#40;</span> date_object <span class="br0">&#41;</span>;</pre>
+<p>
+Backward convertion can be achieved as follows:
+
+</p>
+<pre class="code javascript"><span class="kw2">var</span> convert <span class="sy0">=</span> scheduler.<span class="me1">date</span>.<span class="me1">str_to_date</span><span class="br0">&#40;</span><span class="st0">&quot;%format%&quot;</span><span class="br0">&#41;</span>;
+date_object <span class="sy0">=</span> convert<span class="br0">&#40;</span> date_as_string <span class="br0">&#41;</span>;</pre>
+<p>
+Both functions can be used in UTC variation:
+
+</p>
+<pre class="code javascript"><span class="co1">//convert date object in local time to string in UTC time</span>
+<span class="kw2">var</span> convert <span class="sy0">=</span> scheduler.<span class="me1">date</span>.<span class="me1">date_to_str</span><span class="br0">&#40;</span><span class="st0">&quot;%format%&quot;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+<span class="co1">//convert string in UTC time to date object in local time</span>
+<span class="kw2">var</span> convert <span class="sy0">=</span> scheduler.<span class="me1">date</span>.<span class="me1">str_to_date</span><span class="br0">&#40;</span><span class="st0">&quot;%format%&quot;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h3><a name="date_arithmetic" id="date_arithmetic">Date arithmetic</a></h3>
+<div class="level3">
+<pre class="code javascript">scheduler.<span class="me1">date</span>.<span class="me1">add</span><span class="br0">&#40;</span>initial_date_object<span class="sy0">,</span> increment<span class="sy0">,</span> unit<span class="br0">&#41;</span>; <span class="co1">// returns new date object</span>
+&nbsp;
+<span class="co1">//next month</span>
+<span class="kw2">var</span> new_date <span class="sy0">=</span> scheduler.<span class="me1">date</span>.<span class="me1">add</span><span class="br0">&#40;</span>date<span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="st0">&quot;month&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="co1">//previous week</span>
+<span class="kw2">var</span> new_date <span class="sy0">=</span> scheduler.<span class="me1">date</span>.<span class="me1">add</span><span class="br0">&#40;</span>date<span class="sy0">,-</span><span class="nu0">1</span><span class="sy0">,</span><span class="st0">&quot;week&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Supported units are: day, week, month, year, hour, minute.
+
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

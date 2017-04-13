@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:pdf    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="export_to_pdf" id="export_to_pdf">Export to PDF</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="installation" id="installation">Installation</a></h2>
+<div class="level2">
+
+<p>
+
+Grab the latest package from <a href="http://dhtmlx.com/x/download/regular/scheduler-pdf-php.zip" class="urlextern" title="http://dhtmlx.com/x/download/regular/scheduler-pdf-php.zip"  rel="nofollow">http://dhtmlx.com/x/download/regular/scheduler-pdf-php.zip</a> .<br/>
+
+Unpack it somewhere under the web root ( you will need to enable php for this installation ).
+</p>
+
+<p>
+The Java version of the package can be found at: <a href="http://dhtmlx.com/x/download/regular/scheduler-pdf-java.zip" class="urlextern" title="http://dhtmlx.com/x/download/regular/scheduler-pdf-java.zip"  rel="nofollow">http://dhtmlx.com/x/download/regular/scheduler-pdf-java.zip</a>.
+</p>
+
+</div>
+
+<h2><a name="necessary_includes" id="necessary_includes">Necessary includes</a></h2>
+<div class="level2">
+
+<p>
+
+On the scheduler page you need to include one more extension:
+
+</p>
+<pre class="code html4strict"><span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;codebase/ext/dhtmlxscheduler_pdf.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span></pre>
+<p>
+In older versions of the scheduler this file can be missed in the codebase folder. In such a case you may use the <em>dhtmlxscheduler_pdf.js</em> from the latest package.
+</p>
+
+</div>
+
+<h2><a name="printing_triggering" id="printing_triggering">Printing triggering</a></h2>
+<div class="level2">
+
+<p>
+
+To export scheduler data to <acronym title="Portable Document Format">PDF</acronym> you just need to add a button on the page, which will call the <strong>toPDF()</strong> method. The parameter of the <strong>toPDF()</strong> method is the url of the script, which has been installed previously:
+</p>
+<pre class="code html4strict"><span class="sc2">&lt;<a href="http://december.com/html/4/element/input.html"><span class="kw2">input</span></a> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;button&quot;</span> <span class="kw3">name</span><span class="sy0">=</span><span class="st0">&quot;save&quot;</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;save&quot;</span> </span>
+<span class="sc2"><span class="kw3">onclick</span><span class="sy0">=</span><span class="st0">&quot;scheduler.toPDF('path/to/folder/generate.php')&quot;</span> </span>
+<span class="sc2"><span class="kw3">style</span><span class="sy0">=</span><span class="st0">&quot;right:300px; width:80px; position:absolute; top:1px;&quot;</span>&gt;</span></pre>
+<p>
+<img src="./images/dhtmlxschedulerpdf_year.png" class="media" alt="" />
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerpdf_week.png" class="media" alt="" />
+</p>
+
+<p>
+<img src="./images/dhtmlxschedulerpdf_month.png" class="media" alt="" />
+</p>
+
+</div>
+
+<h2><a name="configuring_service" id="configuring_service">Configuring service</a></h2>
+<div class="level2">
+
+<p>
+To configure the export options you need to deal with both client- and server-sides.
+</p>
+
+</div>
+
+<h3><a name="client-side" id="client-side">Client-side</a></h3>
+<div class="level3">
+
+<p>
+As mentioned above, for export activation you should use the method <strong>toPDF()</strong>:
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">toPDF</span><span class="br0">&#40;</span>path<span class="sy0">,</span> color<span class="sy0">,</span> header<span class="sy0">,</span> footer<span class="br0">&#41;</span>;</pre>
+<p>
+
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em><strong>path</strong></em> - (<em>url</em>) the path to the php file which generates <acronym title="Portable Document Format">PDF</acronym>-file. See details .</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>color</strong></em> - (<em>&#039;color&#039;, &#039;gray&#039;, &#039;bw&#039;, &#039;custom&#039;, &#039;fullcolor&#039;</em>) specifies colormap.</div>
+<ol>
+<li class="level2"><div class="li"> &#039;<em>color</em>&#039; - full-color printing, default value.</div>
+</li>
+<li class="level2"><div class="li"> &#039;<em>gray</em>&#039; - prints in shades of black and white.</div>
+</li>
+<li class="level2"><div class="li"> &#039;<em>bw</em>&#039; - uses only black and white colors.</div>
+</li>
+<li class="level2"><div class="li"> &#039;<em>custom</em>&#039; - can be used to enable a custom colormap ( requires php coding, see  ). </div>
+</li>
+<li class="level2"><div class="li"> &#039;<em>fullcolor</em>&#039; - actual background and text colors that are used while exporting.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> <em><strong>header</strong></em> - (<em>boolean</em>, optional) defines whether a header will be added to the page. By default, <em>false</em>.<br/>
+ See details .</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>footer</strong></em> - (<em>boolean</em>, optional) defines whether a footer will be added to the page. By default, <em>false</em>.<br/>
+ See details .</div>
+</li>
+</ul>
+
+<p>
+
+So, to your <acronym title="HyperText Markup Language">HTML</acronym> page you should add a code line that will call <strong>toPDF()</strong> method with the appropriate number of the parameters. For example, it may look like:
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">toPDF</span><span class="br0">&#40;</span><span class="st0">'path/to/folder/generate.php'</span><span class="sy0">,</span><span class="st0">'gray'</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h3><a name="server-side" id="server-side">Server-side</a></h3>
+<div class="level3">
+
+<p>
+In the code snippet above <em>generate.php</em> is a php file that defines export options.<br/>
+
+The simplest sample of the file is:
+
+</p>
+<pre class="code php"><span class="re0">$scPDF</span> <span class="sy0">=</span> <span class="kw2">new</span> schedulerPDF<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">printScheduler</span><span class="br0">&#40;</span><span class="re0">$xml</span><span class="br0">&#41;</span>;</pre>
+<p>
+But before executing the <strong>printScheduler()</strong> method you can apply some custom configuration options:
+</p>
+
+<p>
+<strong>Size of elements:</strong>
+
+</p>
+<pre class="code php"><span class="co1">// the height of the header of the day container in the month mode</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">monthDayHeaderHeight</span> <span class="sy0">=</span> <span class="nu0">6</span>;
+ <span class="co1">// the height of the header in the month mode</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">monthHeaderHeight</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+ <span class="co1">// the height of the month name container in the year mode</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">yearMonthHeaderHeight</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+ <span class="co1">// height of the row in the agenda mode</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">agendaRowHeight</span> <span class="sy0">=</span> <span class="nu0">6</span>;
+ <span class="co1">// the height of the header in the day and week mode</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayTopHeight</span> <span class="sy0">=</span> <span class="nu0">6</span>;
+ <span class="co1">// the width of the left scale in the day and week mode</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayLeftWidth</span> <span class="sy0">=</span> <span class="nu0">16</span>;</pre>
+<p>
+<strong>Font size:</strong>
+
+</p>
+<pre class="code php"> <span class="co1">// font size settings</span>
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">monthHeaderFontSize</span> <span class="sy0">=</span> <span class="nu0">9</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">monthDayHeaderFontSize</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">monthEventFontSize</span> <span class="sy0">=</span> <span class="nu0">7</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">yearHeaderFontSize</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">yearFontSize</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">agendaFontSize</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayHeaderFontSize</span> <span class="sy0">=</span> <span class="nu0">7</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayScaleFontSize</span> <span class="sy0">=</span> <span class="nu0">8</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayEventHeaderFontSize</span> <span class="sy0">=</span> <span class="nu0">7</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayEventBodyFontSize</span> <span class="sy0">=</span> <span class="nu0">7</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">todayFontSize</span> <span class="sy0">=</span> <span class="nu0">11</span>;</pre>
+<p>
+<strong>Custom colors</strong> ( be sure to use the &#039;custom&#039; value as the name of colormap on client-side ):
+
+</p>
+<pre class="code php"><span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">lineColor</span> <span class="sy0">=</span> <span class="st_h">'586A7E'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">bgColor</span> <span class="sy0">=</span> <span class="st_h">'C2D5FC'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayHeaderColor</span> <span class="sy0">=</span> <span class="st_h">'EBEFF4'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayBodyColor</span> <span class="sy0">=</span> <span class="st_h">'FFFFFF'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayHeaderColorInactive</span> <span class="sy0">=</span> <span class="st_h">'E2E3E6'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">dayBodyColorInactive</span> <span class="sy0">=</span> <span class="st_h">'ECECEC'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">headerTextColor</span> <span class="sy0">=</span> <span class="st_h">'2F3A48'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">textColor</span> <span class="sy0">=</span> <span class="st_h">'2F3A48'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">eventTextColor</span> <span class="sy0">=</span> <span class="st_h">'887A2E'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">eventBorderColor</span> <span class="sy0">=</span> <span class="st_h">'B7A543'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">eventColor</span> <span class="sy0">=</span> <span class="st_h">'FFE763'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">todayTextColor</span> <span class="sy0">=</span> <span class="st_h">'000000'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">scaleColorOne</span> <span class="sy0">=</span> <span class="st_h">'FCFEFC'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">scaleColorTwo</span> <span class="sy0">=</span> <span class="st_h">'DCE6F4'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">yearDayColor</span> <span class="sy0">=</span> <span class="st_h">'EBEFF4'</span>;
+<span class="re0">$scPDF</span><span class="sy0">-&gt;</span><span class="me1">yearDayColorInactive</span> <span class="sy0">=</span> <span class="st_h">'d6d6d6'</span>;</pre>
+<p>
+
+<strong>Headers and footers:</strong>
+
+</p>
+<pre class="code php"><span class="co1">// the height of the header</span>
+<span class="re0">$headerImgHeight</span> <span class="sy0">=</span> <span class="nu0">40</span>;
+<span class="co1">// the height of the footer</span>
+<span class="re0">$footerImgHeight</span> <span class="sy0">=</span> <span class="nu0">40</span>;
+<span class="co1">// the path to the header image</span>
+<span class="re0">$headerImg</span> <span class="sy0">=</span> <span class="st_h">'./header.png'</span>;
+<span class="co1">// the path to the footer image</span>
+<span class="re0">$footerImg</span> <span class="sy0">=</span> <span class="st_h">'./footer.png'</span>;</pre>
+</div>
+
+<h2><a name="header_and_footer" id="header_and_footer">Header and Footer</a></h2>
+<div class="level2">
+
+<p>
+It&#039;s possible to define a custom header and footer for each page.<br/>
+ 
+To achieve that you should make the following steps: 
+</p>
+<ul>
+<li class="level1"><div class="li"> create images with the names  ”<em>header.png</em>” and ”<em>footer.png</em>”.</div>
+</li>
+<li class="level1"><div class="li"> copy those images to the same folder where <em>generate.php</em> resides. </div>
+</li>
+<li class="level1"><div class="li"> on client-side, change code call as:<br/>
+ <br/>
+ <pre class="code javascript">scheduler.<span class="me1">toPDF</span><span class="br0">&#40;</span>url<span class="sy0">,</span> <span class="st0">&quot;color&quot;</span><span class="sy0">,</span> <span class="kw2">true</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span>;</pre></div>
+</li>
+</ul>
+
+<p>
+
+As result, you will have ”<em>header.png</em>” and ”<em>footer.png</em>” images as the header and footer on all pages in the generated pdf file. 
+</p>
+
+</div>
+
+<h2><a name="error_reporting" id="error_reporting">Error reporting</a></h2>
+<div class="level2">
+
+<p>
+
+If output of <acronym title="Portable Document Format">PDF</acronym> file is failed, there must be the file named as “error_report_xxxx.xml”. Please, send this file with any bug-reports.
+</p>
+
+<p>
+If output doesn&#039;t fail, but still has some problems, you can edit <em>generate.php</em> and change
+
+</p>
+<pre class="code php"><span class="re0">$debug</span> <span class="sy0">=</span> <span class="kw2">false</span>;</pre>
+<p>
+
+as
+
+</p>
+<pre class="code php"><span class="re0">$debug</span> <span class="sy0">=</span> <span class="kw2">true</span>;</pre>
+<p>
+As result, there will be a new file saved, with the name “debug_xxxxx.xml”. Please, send it with the related error report. 
+
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

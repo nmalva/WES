@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:templates    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="templates" id="templates">Templates</a></h1>
+<div class="level1">
+
+<p>
+The mobile scheduler lets you define 10 templates. They can be used to change displaying dates and titles in the scheduler. Beware, templates&#039; definitions should go before the code line with scheduler initialization. 
+</p>
+
+<p>
+Below you can find a list of all available templates and their default definitions.
+</p>
+
+<p>
+<strong>Available templates:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">  - the template for days with events in the &#039;month&#039; view.</div>
+</li>
+<li class="level1"><div class="li">  - specifies an event in the &#039;day&#039; view.</div>
+</li>
+<li class="level1"><div class="li">  - specifies an additional css class that will be applied to the events in the lists of the &#039;list&#039; and &#039;month&#039; views.</div>
+</li>
+<li class="level1"><div class="li">  - converts a date object to string with ”%d.%m.%Y” formatting.</div>
+</li>
+<li class="level1"><div class="li">  - specifies a marker in the &#039;list&#039; and &#039;month&#039; views.</div>
+</li>
+<li class="level1"><div class="li">  - converts a date object to string with ”%H:%i” formatting.</div>
+</li>
+<li class="level1"><div class="li">  - specifies an event in the &#039;list&#039; view.</div>
+</li>
+<li class="level1"><div class="li">  - specifies an event in the &#039;month&#039; view.</div>
+</li>
+<li class="level1"><div class="li">  - specifies the default event properties. Used when a user creates new events.</div>
+</li>
+<li class="level1"><div class="li">  - the template for an event in the event preview screen.</div>
+</li>
+</ul>
+
+<p>
+
+<img src="./images/dhtmlxschedulerevent_templates.png" class="media" alt="" />
+</p>
+
+<p>
+<strong>Related sample:</strong> <em>samples/01_basic/04_templates.html</em>
+</p>
+
+</div>
+
+<h3><a name="scheduler.templates.calendar_event" id="scheduler.templates.calendar_event">scheduler.templates.calendar_event</a></h3>
+<div class="level3">
+
+<p>
+The template for days with events in the &#039;month&#039; view.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>date</em>  -  the date which needs to be formatted</div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">calendar_event</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>date<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">return</span> date<span class="sy0">+</span><span class="st0">&quot;&lt;div class='day_with_events'&gt;&lt;/div&gt;&quot;</span>;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+<h3><a name="scheduler.templates.day_event" id="scheduler.templates.day_event">scheduler.templates.day_event</a></h3>
+<div class="level3">
+
+<p>
+Specifies an event in the &#039;day&#039; view.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>obj</em>  -  the event object</div>
+</li>
+<li class="level1"><div class="li"> <em>type</em>  -  the object that specifies items list presentation. See details about the parameter in the related DHTMLX Touch documentation <a href="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky">&#039;API method:type()&#039;</a> </div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">day_event</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>obj<span class="sy0">,</span>type<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">return</span> obj.<span class="me1">text</span>;
+<span class="br0">&#125;</span></pre>
+</div>
+
+<h3><a name="scheduler.templates.event_class" id="scheduler.templates.event_class">scheduler.templates.event_class</a></h3>
+<div class="level3">
+
+<p>
+Specifies an additional css class that will be applied to events in the lists of the &#039;list&#039; and &#039;month&#039; views.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>obj</em>  -  the event object</div>
+</li>
+<li class="level1"><div class="li"> <em>type</em>  -  the object that specifies items list presentation. See details about the parameter in the related DHTMLX Touch documentation <a href="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky">&#039;API method:type()&#039;</a> </div>
+</li>
+</ul>
+<pre class="code javascript"><span class="co1">//The template doesn't have the default definition.</span>
+<span class="co1">//Below you can find a usage example that illustrates how to highlight the text of the TODAY's events</span>
+<span class="sy0">&lt;</span>style<span class="sy0">&gt;</span>
+.<span class="me1">today</span> .<span class="me1">dhx_event_text</span><span class="br0">&#123;</span>
+      color<span class="sy0">:</span>red <span class="sy0">!</span>important;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="sy0">&lt;/</span>style<span class="sy0">&gt;</span>
+...
+<span class="me1">scheduler</span>.<span class="me1">templates</span>.<span class="me1">event_class</span> <span class="sy0">=</span>  <span class="kw2">function</span><span class="br0">&#40;</span>obj<span class="sy0">,</span> type<span class="br0">&#41;</span><span class="br0">&#123;</span>
+       <span class="kw1">return</span> <span class="br0">&#40;</span>dhx.<span class="me1">Date</span>.<span class="me1">datePart</span><span class="br0">&#40;</span>obj.<span class="me1">start_date</span><span class="br0">&#41;</span>.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">==</span>dhx.<span class="me1">Date</span>.<span class="me1">datePart</span><span class="br0">&#40;</span><span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">?</span><span class="st0">&quot;today&quot;</span><span class="sy0">:</span><span class="st0">&quot;&quot;</span>
+<span class="br0">&#125;</span></pre>
+</div>
+
+<h3><a name="scheduler.templates.event_date" id="scheduler.templates.event_date">scheduler.templates.event_date</a></h3>
+<div class="level3">
+
+<p>
+Converts a date object to string with ”%d.%m.%Y” formatting.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>date</em>  -  the date which needs to be formatted</div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">event_date</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>date<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">return</span> dhx.<span class="me1">Date</span>.<span class="me1">dateToStr</span><span class="br0">&#40;</span><span class="st0">&quot;%d.%m.%Y&quot;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>date<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+<h3><a name="scheduler.templates.event_marker" id="scheduler.templates.event_marker">scheduler.templates.event_marker</a></h3>
+<div class="level3">
+
+<p>
+Specifies a marker in the &#039;list&#039; and &#039;month&#039; views.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>obj</em>  -  the event object</div>
+</li>
+<li class="level1"><div class="li"> <em>type</em>  -  the object that specifies items list presentation. See details about the parameter in the related DHTMLX Touch documentation <a href="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky">&#039;API method:type()&#039;</a> </div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">event_marker</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>obj<span class="sy0">,</span>type<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   	<span class="kw1">return</span> <span class="st0">&quot;&lt;div class='dhx_event_marker' style='&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">templates</span>.<span class="me1">event_color</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;'&gt;&lt;/div&gt;&quot;</span>;
+<span class="br0">&#125;</span></pre>
+</div>
+
+<h3><a name="scheduler.templates.event_time" id="scheduler.templates.event_time">scheduler.templates.event_time</a></h3>
+<div class="level3">
+
+<p>
+Converts a date object to string with ”%H:%i” formatting.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>date</em>  -  the date which needs to be formatted</div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">event_time</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>date<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">return</span> dhx.<span class="me1">Date</span>.<span class="me1">dateToStr</span><span class="br0">&#40;</span><span class="st0">&quot;%H:%i&quot;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>date<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+<h3><a name="scheduler.templates.event_title" id="scheduler.templates.event_title">scheduler.templates.event_title</a></h3>
+<div class="level3">
+
+<p>
+Specifies an event in the &#039;list&#039; view.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>obj</em>  -  the event object</div>
+</li>
+<li class="level1"><div class="li"> <em>type</em>  -  the object that specifies items list presentation. See details about the parameter in the related DHTMLX Touch documentation <a href="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky">&#039;API method:type()&#039;</a> </div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">event_title</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>obj<span class="sy0">,</span>type<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">return</span> <span class="st0">&quot;&lt;div class='dhx_day_title'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">templates</span>.<span class="me1">event_date</span><span class="br0">&#40;</span>obj.<span class="me1">start_date</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&lt;div style='margin:10px'&gt;&lt;div class='dhx_event_time'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">templates</span>.<span class="me1">event_time</span><span class="br0">&#40;</span>obj.<span class="me1">start_date</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">templates</span>.<span class="me1">event_marker</span><span class="br0">&#40;</span>obj<span class="sy0">,</span>type<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;&lt;div class='dhx_event_text'&gt;&quot;</span><span class="sy0">+</span>obj.<span class="me1">text</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&lt;/div&gt;&quot;</span>;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+<h3><a name="scheduler.templates.month_event_title" id="scheduler.templates.month_event_title">scheduler.templates.month_event_title</a></h3>
+<div class="level3">
+
+<p>
+Specifies an event in the &#039;month&#039; view.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>obj</em>  -  the event object</div>
+</li>
+<li class="level1"><div class="li"> <em>type</em>  -  the object that specifies items list presentation. See details about the parameter in the related DHTMLX Touch documentation <a href="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=api%3Aconfig_renderstack_type&amp;btnI=lucky">&#039;API method:type()&#039;</a> </div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">month_event_title</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>obj<span class="sy0">,</span>type<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">return</span> scheduler.<span class="me1">templates</span>.<span class="me1">event_marker</span><span class="br0">&#40;</span>obj<span class="sy0">,</span>type<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;&lt;div class='dhx_event_time'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">templates</span>.<span class="me1">event_time</span><span class="br0">&#40;</span>obj.<span class="me1">start_date</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&lt;div class='dhx_event_text'&gt;&quot;</span><span class="sy0">+</span>obj.<span class="me1">text</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;	
+<span class="br0">&#125;</span></pre>
+</div>
+
+<h3><a name="scheduler.templates.new_event_data" id="scheduler.templates.new_event_data">scheduler.templates.new_event_data</a></h3>
+<div class="level3">
+
+<p>
+Specifies the default event properties. Used when a user creates new events.
+</p>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">new_event_data</span><span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw2">var</span> hours <span class="sy0">=</span> <span class="br0">&#40;</span>dhx.<span class="me1">Date</span>.<span class="me1">add</span><span class="br0">&#40;</span><span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="st0">&quot;hour&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">getHours</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+	<span class="kw2">var</span> start <span class="sy0">=</span> dhx.<span class="me1">Date</span>.<span class="me1">copy</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">coreData</span>.<span class="me1">getValue</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;<span class="co1">//coreData refers to the currently selected date</span>
+	start.<span class="me1">setHours</span><span class="br0">&#40;</span>hours<span class="br0">&#41;</span>;
+        <span class="kw2">var</span> end <span class="sy0">=</span> dhx.<span class="me1">Date</span>.<span class="me1">add</span><span class="br0">&#40;</span>start<span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="st0">&quot;hour&quot;</span><span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="br0">&#123;</span>start_date<span class="sy0">:</span>start<span class="sy0">,</span>end_date<span class="sy0">:</span>end<span class="br0">&#125;</span>;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+<h3><a name="scheduler.templates.selected_event" id="scheduler.templates.selected_event">scheduler.templates.selected_event</a></h3>
+<div class="level3">
+
+<p>
+The template for an event in the &#039;event preview&#039; screen.
+</p>
+
+<p>
+<strong>Parameters:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>obj</em>  -  the event object</div>
+</li>
+</ul>
+<pre class="code javascript">scheduler.<span class="me1">templates</span>.<span class="me1">selected_event</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="br0">&#123;</span>
+     <span class="kw2">var</span> html <span class="sy0">=</span> <span class="st0">&quot;&quot;</span><span class="sy0">,</span> fts<span class="sy0">=</span><span class="st0">&quot;&quot;</span><span class="sy0">,</span> fte<span class="sy0">=</span><span class="st0">&quot;&quot;</span>;
+     <span class="kw2">var</span> start <span class="sy0">=</span> obj.<span class="me1">start_date</span>;
+     <span class="kw2">var</span> end <span class="sy0">=</span> obj.<span class="me1">end_date</span>;
+&nbsp;
+     <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>start<span class="br0">&#41;</span> <span class="kw1">return</span> html;
+     html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div  class='selected_event &quot;</span><span class="sy0">+</span>scheduler.<span class="me1">templates</span>.<span class="me1">event_class</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;' style='&quot;</span><span class="sy0">+</span><span class="br0">&#40;</span>obj.<span class="me1">color</span><span class="sy0">?</span><span class="st0">&quot;background-color:&quot;</span><span class="sy0">+</span>obj.<span class="me1">color</span><span class="sy0">+</span><span class="st0">&quot;;&quot;</span><span class="sy0">:</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="br0">&#40;</span>obj.<span class="me1">fontColor</span>||obj.<span class="me1">textColor</span><span class="sy0">?</span><span class="st0">&quot;color:&quot;</span><span class="sy0">+</span><span class="br0">&#40;</span>obj.<span class="me1">fontColor</span>||obj.<span class="me1">textColor</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;'&gt;&quot;</span>;
+     html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_title'&gt;&quot;</span><span class="sy0">+</span>obj.<span class="me1">text</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+&nbsp;
+     <span class="kw1">if</span><span class="br0">&#40;</span>dhx.<span class="me1">Date</span>.<span class="me1">datePart</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span>.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">==</span>dhx.<span class="me1">Date</span>.<span class="me1">datePart</span><span class="br0">&#40;</span>end<span class="br0">&#41;</span>.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+         <span class="kw2">var</span> fd <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">dateFormatStr</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span>;
+         fts <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">timeFormatStr</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span>;
+         fte <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">timeFormatStr</span><span class="br0">&#40;</span>end<span class="br0">&#41;</span>;
+         html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_text'&gt;&quot;</span><span class="sy0">+</span>fd<span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+         html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_text'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">locale</span>.<span class="me1">labels</span>.<span class="me1">label_from</span><span class="sy0">+</span><span class="st0">&quot; &quot;</span><span class="sy0">+</span>fts<span class="sy0">+</span><span class="st0">&quot; &quot;</span><span class="sy0">+</span>scheduler.<span class="me1">locale</span>.<span class="me1">labels</span>.<span class="me1">label_to</span><span class="sy0">+</span><span class="st0">&quot; &quot;</span><span class="sy0">+</span>fte<span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+     <span class="br0">&#125;</span>
+     <span class="kw1">else</span><span class="br0">&#123;</span>
+         <span class="kw2">var</span> fds <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">longDateFormatStr</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span>;
+         <span class="kw2">var</span> fde <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">longDateFormatStr</span><span class="br0">&#40;</span>end<span class="br0">&#41;</span>;
+         <span class="co2">/*if not &quot;all-day&quot; event*/</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="br0">&#40;</span>dhx.<span class="me1">Date</span>.<span class="me1">datePart</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span>.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">==</span>start.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&amp;&amp;</span>dhx.<span class="me1">Date</span>.<span class="me1">datePart</span><span class="br0">&#40;</span>end<span class="br0">&#41;</span>.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">==</span>end.<span class="me1">valueOf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+             fts <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">timeFormatStr</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot; &quot;</span>;
+             fte <span class="sy0">=</span> dhx.<span class="me1">i18n</span>.<span class="me1">timeFormatStr</span><span class="br0">&#40;</span>end<span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot; &quot;</span>;
+         <span class="br0">&#125;</span>
+         html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_text'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">locale</span>.<span class="me1">labels</span>.<span class="me1">label_from</span><span class="sy0">+</span><span class="st0">&quot; &quot;</span><span class="sy0">+</span>fts<span class="sy0">+</span>fds<span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+         html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_text'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">locale</span>.<span class="me1">labels</span>.<span class="me1">label_to</span><span class="sy0">+</span><span class="st0">&quot; &quot;</span><span class="sy0">+</span>fte<span class="sy0">+</span>fde<span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+     <span class="br0">&#125;</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>obj.<span class="me1">details</span><span class="sy0">&amp;&amp;</span>obj.<span class="me1">details</span><span class="sy0">!==</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+         html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_title'&gt;&quot;</span><span class="sy0">+</span>scheduler.<span class="me1">locale</span>.<span class="me1">labels</span>.<span class="me1">label_details</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+         html <span class="sy0">+=</span> <span class="st0">&quot;&lt;div class='event_text'&gt;&quot;</span><span class="sy0">+</span>obj.<span class="me1">details</span><span class="sy0">+</span><span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+     <span class="br0">&#125;</span>
+     html <span class="sy0">+=</span> <span class="st0">&quot;&lt;/div&gt;&quot;</span>;
+     <span class="kw1">return</span> html;
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+.mabm{
+}
+
+/* estilo de los listados */
+.mabm .mlistado{
+	border:1px #E5E5E5 solid;
+	border-collapse:collapse;
+}
+	.mabm .mtitulo{
+		float:left;
+	}
+	.mabm .mbotonera{
+		float:right;
+		margin-left:30px;
+	}
+	.mabm .mlistado .btnAgregar{
+		background:#BDBDBD url(../img/add.png) no-repeat 3px 3px;
+		border:1px solid #959595;
+		color:#FFFFFF;
+		font-family:Tahoma;
+		font-size: 11px;
+		padding:3px 3px 3px 23px;
+	}
+		.mabm .mlistado .btnAgregar:hover{
+			background-color:#16CA16;
+			cursor:pointer;
+		}
+	.mabm .mtituloColEditar{
+		text-align:center !important;
+		width: 16px;
+	}
+	.mabm .mtituloColBorrar{
+		text-align:center !important;
+		width: 16px;
+	}
+	.mabm .celdaEditar{
+		text-align:center;
+	}
+	.mabm .celdaBorrar{
+		text-align:center;
+	}
+	.mabm .mlistado TH{
+		FONT-WEIGHT: normal; 
+		font-size:10px !important;
+		text-align: left;
+		BACKGROUND-COLOR: #F7F7F7;
+		padding: 5px;
+		border:1px solid #E5E5E5;
+	}
+	.mabm .mlistado TH A{
+		font-size:10px !important;
+		color: black !important;
+		text-decoration: none !important;
+	}
+	.mabm .mlistado TH A:hover{
+		text-decoration: underline !important;
+	}
+	.mabm .mlistado TD{
+		padding: 5px;
+		border-left:1px solid #E5E5E5;
+		border-right:1px solid #E5E5E5;
+	}
+	.mabm .mlistado TR.rallado1{ /* filas impares */
+		BACKGROUND-COLOR: #FDFDFD;
+	}
+	.mabm .mlistado TR.rallado{ /* filas pares */
+		BACKGROUND-COLOR: #FAFAFA;
+	}
+	.mabm .mlistado THEAD TH{
+		background: silver;
+		line-height: 25px;
+		FONT-WEIGHT: bold; 
+		font-size: 14px !important;
+		text-align: left;
+		BACKGROUND-COLOR: #EFEFEF;
+		color: #464646;
+		padding: 5px;
+		border:1px solid #E5E5E5;
+		border-bottom:0;
+	}
+	.mabm .mlistado THEAD TH DIV{
+		font-size: 14px !important;
+	}
+	.mabm .mlistado TFOOT TH{
+		FONT-WEIGHT: normal; 
+		text-align: left;
+		BACKGROUND-COLOR: #EFEFEF;
+		color: black;
+		padding: 5px;
+	}
+	.mabm .mlistado TFOOT TH A{
+	}
+	.mabm .mlistado TFOOT TH A{
+		text-decoration: none !important;
+	}
+
+/* para los formularios de ingreso de datos */
+.mabm .mformulario{
+	border:1px solid #E5E5E5;
+	background-color: #FCFCFC;
+	border-collapse:collapse;
+}
+	.mabm .mformulario THEAD TH{
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 14px; 
+		text-align: center;
+		BACKGROUND-COLOR: #EFEFEF;
+		border: 1px solid #D7D7D7;
+		padding: 3px;
+		line-height:25px;
+		color: #464646;
+	}
+	.mabm .mformulario TFOOT TH{
+		FONT-WEIGHT: bold; 
+		text-align: center;
+		BACKGROUND-COLOR: #EFEFEF;
+		border: 1px solid #D7D7D7;
+		padding: 7px 3px;
+	}
+	.mabm .mformulario TH{
+		FONT-WEIGHT: normal; 
+		text-align: right;
+		padding-right: 15px;
+		padding-left: 50px;
+		BACKGROUND-COLOR: #F7F7F7;
+		border-bottom: 1px dashed #EDEDED;
+	}
+	.mabm .mformulario TD{
+		padding: 8px 12px;
+		border-bottom: 1px dashed #F3F3F3;
+	}
+	.mabm .mformulario .input-text{
+		width: 200px;
+	}
+	.mabm .mformulario .input-fecha{
+		width: 200px;
+	}
+	.mabm .mformulario .input-textarea{
+		width: 200px;
+		height: 50px;
+	}
+	.mabm .mformulario .input-select{
+		width: 200px;
+	}
+	.mabm .mformulario .input-button{
+		background:#A3A3A3 url(../img/cancel.png) no-repeat 5px 5px;
+		border:1px solid #5E5E5E;
+		color:#FFFFFF;
+		font-family:Tahoma;
+		font-size: 11px;
+		padding:5px 10px 5px 25px;
+	}
+		.mabm .mformulario .input-button:hover{
+			background-color:#B7B7B7;
+			cursor:pointer;
+		}
+	.mabm .mformulario .input-submit{
+		background:#13AC13 url(../img/accept.png) no-repeat 5px 5px;
+		border:1px solid #006300;
+		color:#FFFFFF;
+		font-family:Tahoma;
+		font-size: 11px;
+		padding:5px 10px 5px 25px;
+	}
+		.mabm .mformulario .input-submit:hover{
+			background-color:#16CA16;
+			cursor:pointer;
+		}
+	.mabm .mformulario .divBtnAceptar{
+		float: right;
+		margin-right: 5px;
+	}
+	.mabm .mformulario .divBtnCancelar{
+		float: left;
+		margin-left: 5px;
+	}
+
+.mabm .merror {
+	background: #F7F1EF url(../img/icon-alert.png) 5px 5px no-repeat;
+	border-top: 4px solid #C40000;
+	border-bottom: 4px solid #C40000;
+	color: #000;
+	margin-top: 5px;
+	padding-left: 40px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom:10px;
+}
+
+
+.mabm .paginado{
+}
+	.mabm .paginado .rotuloTotalRegistros{
+	}
+	.mabm .paginado .link_pagina_actual, .mabm .paginado .ant_desact, .mabm .paginado .sig_desact{
+		background-color: #ffffff;
+		border: 1px solid #D4D4D4;
+		padding: 2px;
+		margin: 2px;
+		text-decoration: none;
+	}
+	.mabm .paginado .link_pagina{
+		background-color: #EFEFEF;
+		border: 1px solid #D4D4D4;
+		padding: 2px;
+		text-decoration: none;
+	}
+		.mabm .paginado a.link_pagina:hover{
+			background-color: #E3E3E3;
+			border: 1px solid #D4D4D4;
+			text-decoration: none;
+		}
+	.mabm .paginado .link_ant, .mabm .paginado .link_sig{
+		background-color: #EFEFEF;
+		border: 1px solid #D4D4D4;
+		padding: 2px;
+		text-decoration: none;
+	}
+		.mabm .paginado a.link_ant:hover, .mabm .paginado a.link_sig:hover{
+			background-color: #E3E3E3;
+			border: 1px solid #D4D4D4;
+			text-decoration: none;
+		}
+
+.mabm .mhint {
+	display: none;
+	filter: alpha(opacity=70);
+	opacity: .7;
+	position: absolute;
+	width: 200px;
+	margin-top: -3px;
+	margin-left: 10px;
+	border: 1px solid #797979;
+	padding: 10px 12px;
+	background: #DBDBDB url(../img/pointer.gif) no-repeat -10px 5px;
+}
+.mabm .mhint .mhint-pointer {
+	position: absolute;
+	left: -10px;
+	top: 5px;
+	width: 10px;
+	height: 19px;
+	background: url(../img/pointer.gif) left top no-repeat;
+}

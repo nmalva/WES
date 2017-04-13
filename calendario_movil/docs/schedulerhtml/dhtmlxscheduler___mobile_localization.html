@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:mobile_localization    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="localization" id="localization">Localization</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="basic_principles" id="basic_principles">Basic principles</a></h2>
+<div class="level2">
+
+<p>
+The mobile version as well as the desktop one allows you to adapt the scheduler to a particular language and region.<br/>
+
+</p>
+
+<p>
+
+<em class="u"><strong>To localize the scheduler to some language you should know the following</strong>:</em> 
+</p>
+<ul>
+<li class="level1"><div class="li"> All locale&#039;s parameters for the mobile version are contained in the <em>scheduler.locale.labels</em> object and to redefine the parameters you should &#039;rewrite&#039; this object.<br/>
+ <br/>
+</div>
+</li>
+<li class="level1"><div class="li"> For &#039;rewriting&#039; you should use the technique below:<br/>
+ <br/>
+ <pre class="code javascript">scheduler.<span class="me1">locale</span>.<span class="me1">labels</span> <span class="sy0">=</span> labels;</pre>
+<p>
+  where <em>labels</em> is any object variable that contains the redefined parameters.<br/>
+ 
+</p>
+<pre class="code javascript"><span class="kw2">var</span> labels <span class="sy0">=</span> <span class="br0">&#123;</span> 
+               icon_today <span class="sy0">:</span> <span class="st0">&quot;...&quot;</span><span class="sy0">,</span>
+               ... 
+<span class="br0">&#125;</span></pre></div>
+</li>
+</ul>
+
+<p>
+
+<strong>Related sample:</strong> <em>samples/07_mobile/07_locale.html</em>
+</p>
+
+</div>
+
+<h2><a name="localization_parameters_for_mobile_scheduler" id="localization_parameters_for_mobile_scheduler">Localization parameters for mobile scheduler</a></h2>
+<div class="level2">
+
+<p>
+The table below presents all localization parameters available for the mobile version of the scheduler. 
+</p>
+<pre class="code javascript">scheduler.<span class="me1">locale</span>.<span class="me1">labels</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+	list_tab<span class="sy0">:</span> <span class="st0">&quot;List&quot;</span><span class="sy0">,</span>
+	day_tab<span class="sy0">:</span> <span class="st0">&quot;Day&quot;</span><span class="sy0">,</span>
+	month_tab<span class="sy0">:</span> <span class="st0">&quot;Month&quot;</span><span class="sy0">,</span>
+	icon_today<span class="sy0">:</span> <span class="st0">&quot;Today&quot;</span><span class="sy0">,</span>
+	icon_save<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span><span class="sy0">,</span>
+	icon_done<span class="sy0">:</span> <span class="st0">&quot;Done&quot;</span><span class="sy0">,</span>
+	icon_delete<span class="sy0">:</span> <span class="st0">&quot;Delete event&quot;</span><span class="sy0">,</span>
+	icon_cancel<span class="sy0">:</span> <span class="st0">&quot;Cancel&quot;</span><span class="sy0">,</span>
+	icon_edit<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span><span class="sy0">,</span>
+	icon_back<span class="sy0">:</span> <span class="st0">&quot;Back&quot;</span><span class="sy0">,</span>
+	icon_close<span class="sy0">:</span> <span class="st0">&quot;Close form&quot;</span><span class="sy0">,</span>
+	icon_yes<span class="sy0">:</span> <span class="st0">&quot;Yes&quot;</span><span class="sy0">,</span>
+	icon_no<span class="sy0">:</span> <span class="st0">&quot;No&quot;</span><span class="sy0">,</span>
+	confirm_closing<span class="sy0">:</span> <span class="st0">&quot;Your changes will be lost, are your sure ?&quot;</span><span class="sy0">,</span>
+	confirm_deleting<span class="sy0">:</span> <span class="st0">&quot;The event will be deleted permanently, are you sure?&quot;</span><span class="sy0">,</span>
+	label_event<span class="sy0">:</span> <span class="st0">&quot;Event&quot;</span><span class="sy0">,</span> 
+	label_start<span class="sy0">:</span> <span class="st0">&quot;Start&quot;</span><span class="sy0">,</span>
+	label_end<span class="sy0">:</span> <span class="st0">&quot;End&quot;</span><span class="sy0">,</span>
+	label_details<span class="sy0">:</span> <span class="st0">&quot;Notes&quot;</span><span class="sy0">,</span>
+	label_from<span class="sy0">:</span> <span class="st0">&quot;from&quot;</span><span class="sy0">,</span>
+	label_to<span class="sy0">:</span> <span class="st0">&quot;to&quot;</span><span class="sy0">,</span>
+	label_allday<span class="sy0">:</span> <span class="st0">&quot;All day&quot;</span><span class="sy0">,</span>
+	label_time<span class="sy0">:</span> <span class="st0">&quot;Time&quot;</span>
+<span class="br0">&#125;</span>;</pre>
+<p>
+<strong>Related sample:</strong> <em>samples/01_basic/07_locale.html</em>
+</p>
+
+</div>
+
+<h2><a name="recurring_events" id="recurring_events">Recurring events</a></h2>
+<div class="level2">
+
+<p>
+Recurring events use the same technique but just take another locale object -  <em>scheduler.labels.recurring</em>. 
+</p>
+
+<p>
+Localization parameters for recurring events:
+
+</p>
+<pre class="code javascript">scheduler.<span class="me1">labels</span>.<span class="me1">recurring</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+	none<span class="sy0">:</span> <span class="st0">&quot;Never&quot;</span><span class="sy0">,</span>
+	daily<span class="sy0">:</span> <span class="st0">&quot;Daily&quot;</span><span class="sy0">,</span>
+	day<span class="sy0">:</span> <span class="st0">&quot;day(s)&quot;</span><span class="sy0">,</span>
+	every<span class="sy0">:</span> <span class="st0">&quot;Every&quot;</span><span class="sy0">,</span>
+	weekly<span class="sy0">:</span> <span class="st0">&quot;Weekly&quot;</span><span class="sy0">,</span>
+	week<span class="sy0">:</span> <span class="st0">&quot;week(s) on&quot;</span><span class="sy0">,</span>
+	each<span class="sy0">:</span> <span class="st0">&quot;Each&quot;</span><span class="sy0">,</span>
+	on_day<span class="sy0">:</span> <span class="st0">&quot;on the&quot;</span><span class="sy0">,</span>
+	monthly<span class="sy0">:</span> <span class="st0">&quot;Monthly&quot;</span><span class="sy0">,</span>
+	month<span class="sy0">:</span> <span class="st0">&quot;month(s)&quot;</span><span class="sy0">,</span>
+	month_day<span class="sy0">:</span> <span class="st0">&quot;on what day of the month&quot;</span><span class="sy0">,</span>
+	week_day<span class="sy0">:</span> <span class="st0">&quot;on what day of the week&quot;</span><span class="sy0">,</span>
+	yearly<span class="sy0">:</span> <span class="st0">&quot;Yearly&quot;</span><span class="sy0">,</span>
+	year<span class="sy0">:</span> <span class="st0">&quot;year(s) in&quot;</span><span class="sy0">,</span>
+	counters<span class="sy0">:</span> <span class="br0">&#91;</span><span class="st0">&quot;the first&quot;</span><span class="sy0">,</span><span class="st0">&quot;the second&quot;</span><span class="sy0">,</span><span class="st0">&quot;the third&quot;</span><span class="sy0">,</span> <span class="st0">&quot;the fourth&quot;</span><span class="sy0">,</span> <span class="st0">&quot;the fifth&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+	never<span class="sy0">:</span> <span class="st0">&quot;Never&quot;</span><span class="sy0">,</span>
+	repeat<span class="sy0">:</span> <span class="st0">&quot;Repeat&quot;</span><span class="sy0">,</span>
+	end_repeat<span class="sy0">:</span> <span class="st0">&quot;End repeat&quot;</span><span class="sy0">,</span>
+	endless_repeat<span class="sy0">:</span> <span class="st0">&quot;Endless repeat&quot;</span><span class="sy0">,</span>
+	end_repeat_label<span class="sy0">:</span> <span class="st0">&quot;Repeat will end by&quot;</span>
+<span class="br0">&#125;</span>;</pre>
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

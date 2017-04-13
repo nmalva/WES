@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:mobile_data    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+
+<h1><a name="loading_saving_data" id="loading_saving_data">Loading &amp; Saving data</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="loading_data" id="loading_data">Loading data</a></h2>
+<div class="level2">
+
+<p>
+To load events to the scheduler you should use either the method <strong>load()</strong> or the method <strong>parse()</strong>:
+
+</p>
+<pre class="code javascript">$$<span class="br0">&#40;</span><span class="st0">&quot;scheduler_id&quot;</span><span class="br0">&#41;</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;data/events.xml&quot;</span><span class="sy0">,</span><span class="st0">&quot;xml&quot;</span><span class="br0">&#41;</span>;
+<span class="co1">//or </span>
+$$<span class="br0">&#40;</span><span class="st0">&quot;scheduler_id&quot;</span><span class="br0">&#41;</span>.<span class="me1">parse</span><span class="br0">&#40;</span><span class="br0">&#91;</span>
+	<span class="br0">&#123;</span> id<span class="sy0">:</span><span class="nu0">1</span><span class="sy0">,</span> start_date<span class="sy0">:</span><span class="st0">&quot;2009-7-1 6:00&quot;</span><span class="sy0">,</span> end_date<span class="sy0">:</span><span class="st0">&quot;2009-7-1 8:00&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span><span class="st0">&quot;Event 1&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+	<span class="br0">&#123;</span> id<span class="sy0">:</span><span class="nu0">2</span><span class="sy0">,</span> start_date<span class="sy0">:</span><span class="st0">&quot;2009-7-2 6:00&quot;</span><span class="sy0">,</span> end_date<span class="sy0">:</span><span class="st0">&quot;2009-7-2 8:00&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span><span class="st0">&quot;Event 2&quot;</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span><span class="sy0">,</span><span class="st0">&quot;json&quot;</span><span class="br0">&#41;</span>;</pre>
+<p>
+The method <strong>load()</strong> takes 2 parameters and loads data from some external <acronym title="Uniform Resource Locator">URL</acronym>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>url</em></strong> - the data url.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>type</em></strong> - the type of loading data: &#039;<em>json</em>&#039;, &#039;<em>xml</em>&#039; or &#039;<em>scheduler</em>&#039;.</div>
+</li>
+</ul>
+
+<p>
+
+The method <strong>parse()</strong> also takes 2 parameters but loads data from a data object:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>data</em></strong> - the string or object, which represents data.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>type</em></strong> - the type of loading data: &#039;<em>json</em>&#039;, &#039;<em>xml</em>&#039; or &#039;<em>scheduler</em>&#039;. </div>
+</li>
+</ul>
+
+<p>
+
+<strong>Related sample:</strong> <em>samples/01_basic/01_init.html</em>
+</p>
+
+</div>
+
+<h3><a name="supported_data_types" id="supported_data_types">Supported data types</a></h3>
+<div class="level3">
+
+<p>
+<em class="u">The mandatory data fields:</em>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em><strong>start_date</strong></em> - the start date of an event in the format &#039;<em>yyyy-mm-dd hh:mm:ss</em>&#039; (<a href="dhtmlxscheduler___date_configuration.html#date_format" class="wikilink1" title="dhtmlxscheduler:date_configuration">format details</a>).</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>end_date</strong></em> - the end date of an event in the format &#039;<em>yyyy-mm-dd hh:mm:ss</em>&#039; (<a href="dhtmlxscheduler___date_configuration.html#date_format" class="wikilink1" title="dhtmlxscheduler:date_configuration">format details</a>).</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>text</strong></em> - the title of an event.</div>
+</li>
+</ul>
+
+<p>
+<em class="u">The optional data fields:</em>
+</p>
+<ul>
+<li class="level1"><div class="li"> <em><strong>details</strong></em> - the description of an event.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>any custom</em></strong>.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a name="json" id="json">json</a></h4>
+<div class="level4">
+<pre class="code javascript"><span class="br0">&#91;</span>
+ <span class="br0">&#123;</span> id<span class="sy0">:</span><span class="nu0">1</span><span class="sy0">,</span> start_date<span class="sy0">:</span><span class="st0">&quot;2011-05-24 00:00:00&quot;</span><span class="sy0">,</span> end_date<span class="sy0">:</span><span class="st0">&quot;2011-06-08 00:00:00&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span><span class="st0">&quot;French Open&quot;</span><span class="sy0">,</span> details<span class="sy0">:</span><span class="st0">&quot;Philippe-Chatrier Court Paris, FRA&quot;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> id<span class="sy0">:</span><span class="nu0">2</span><span class="sy0">,</span> start_date<span class="sy0">:</span><span class="st0">&quot;2011-06-10 00:00:00&quot;</span><span class="sy0">,</span> end_date<span class="sy0">:</span><span class="st0">&quot;2011-06-13 00:00:00&quot;</span><span class="sy0">,</span> text<span class="sy0">:</span><span class="st0">&quot;Aegon Championship&quot;</span><span class="sy0">,</span> details<span class="sy0">:</span><span class="st0">&quot;The Queens Club London, ENG&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#93;</span></pre>
+</div>
+
+<h4><a name="xml" id="xml">xml</a></h4>
+<div class="level4">
+<pre class="code javascript"><span class="sy0">&lt;</span>data<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>item id<span class="sy0">=</span><span class="st0">&quot;1&quot;</span><span class="sy0">&gt;</span>
+		<span class="sy0">&lt;</span>start_date<span class="sy0">&gt;</span><span class="nu0">2011</span><span class="sy0">-</span>05<span class="sy0">-</span><span class="nu0">24</span> 00<span class="sy0">:</span>00<span class="sy0">:</span>00<span class="sy0">&lt;/</span>start_date<span class="sy0">&gt;</span>
+		<span class="sy0">&lt;</span>end_date<span class="sy0">&gt;</span><span class="nu0">2011</span><span class="sy0">-</span>06<span class="sy0">-</span>08 00<span class="sy0">:</span>00<span class="sy0">:</span>00<span class="sy0">&lt;/</span>end_date<span class="sy0">&gt;</span>
+		<span class="sy0">&lt;</span>text<span class="sy0">&gt;</span>French Open<span class="sy0">&lt;/</span>text<span class="sy0">&gt;</span>
+		<span class="sy0">&lt;</span>details<span class="sy0">&gt;</span>Philippe<span class="sy0">-</span>Chatrier Court Paris<span class="sy0">,</span> FRA<span class="sy0">&lt;/</span>details<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;/</span>item<span class="sy0">&gt;</span>
+        ...
+<span class="sy0">&lt;/</span>data<span class="sy0">&gt;</span></pre>
+</div>
+
+<h4><a name="scheduler" id="scheduler">scheduler</a></h4>
+<div class="level4">
+<pre class="code xml"><span class="sc3"><span class="re1">&lt;data<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;event</span> <span class="re0">id</span>=<span class="st0">&quot;1&quot;</span><span class="re2">&gt;</span></span>
+		<span class="sc3"><span class="re1">&lt;start_date<span class="re2">&gt;</span></span></span>2011-05-24 00:00:00<span class="sc3"><span class="re1">&lt;/start_date<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;end_date<span class="re2">&gt;</span></span></span>2011-06-08 00:00:00<span class="sc3"><span class="re1">&lt;/end_date<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;text<span class="re2">&gt;</span></span></span>French Open<span class="sc3"><span class="re1">&lt;/text<span class="re2">&gt;</span></span></span>
+		<span class="sc3"><span class="re1">&lt;details<span class="re2">&gt;</span></span></span>Philippe-Chatrier Court Paris, FRA<span class="sc3"><span class="re1">&lt;/details<span class="re2">&gt;</span></span></span>
+	<span class="sc3"><span class="re1">&lt;/event<span class="re2">&gt;</span></span></span>
+        ...
+<span class="sc3"><span class="re1">&lt;/data<span class="re2">&gt;</span></span></span></pre>
+</div>
+
+<h2><a name="saving_data" id="saving_data">Saving data</a></h2>
+<div class="level2">
+
+<p>
+The mobile scheduler lets you to save data back to DB: during initialization of the scheduler you should specify the appropriate server file in the parameter  &#039;<strong>save</strong>&#039; of the object constructor.
+
+</p>
+<pre class="code javascript">dhx.<span class="me1">ready</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+	dhx.<span class="me1">ui</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+		view<span class="sy0">:</span> <span class="st0">&quot;scheduler&quot;</span><span class="sy0">,</span>
+		id<span class="sy0">:</span> <span class="st0">&quot;scheduler&quot;</span><span class="sy0">,</span>
+		save<span class="sy0">:</span> <span class="st0">&quot;php/events.php&quot;</span>
+	<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+	$$<span class="br0">&#40;</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">&quot;php/events.php&quot;</span><span class="sy0">,</span><span class="st0">&quot;scheduler&quot;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;</pre>
+<p>
+If you use dhtmlxConnector, the path to its file can be set as this parameter. In this case, dhtmlxConnector will do all the server work.
+</p>
+
+<p>
+<strong>Related sample:</strong> <em>samples/01_basic/05_data_saving.html</em>
+
+</p>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>

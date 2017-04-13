@@ -1,0 +1,32 @@
+=================================================================================
+
+	* MiAbmPHP *
+
+		MiAbmPHP es un conjunto de clases PHP para generar formularios de listado, alta, baja y modificación de una tabla de base de datos.
+	
+	Licencia: MIT (http://www.opensource.org/licenses/mit-license.php)
+	Versión: 2.1
+	Autor: Andres Carizza http://www.andrescarizza.com.ar/
+
+	Requerimientos:
+		Apache 2.0 o superior
+		PHP 5 or superior
+		MySQL 5 or superior
+		
+	Utiliza:
+		MooTools, <http://mootools.net>, My Object Oriented (JavaScript) Tools. Copyright (c) 2006-2009 Valerio Proietti, <http://mad4milk.net>, MIT Style License.
+		formcheck.js v.1.4.2 for mootools v1.2 - by Floor SA (http://www.floor.ch) MIT-style license
+
+=================================================================================
+
+Para ejecutar el demo:
+
+1) Extraer los contenidos del archivo comprimido en una carpeta de nuestro servidor.
+2) Crear una BD e importar test.sql. (para este demo se llama "demoabm", pero se puede cambiar)
+3) Editar test.php para cambiar los datos de conexión a la BD. --> $db = new class_db("HOST", "USUARIO", "CONTRASEÑA", "NOMBRE DE LA BASE");
+
+Información adicional:
+
+- Se pueden cambiar los estilos simplemente editando el archivo abm.css (en este demo hay dos estilos)
+- Para usar los campos tipo fecha hay que incluir los JS correspondientes
+- Para usar el chequeo de campos de JS hay que incluir los JS correspondientes

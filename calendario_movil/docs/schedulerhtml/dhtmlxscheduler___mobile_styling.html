@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    dhtmlxscheduler:mobile_styling    [DHX documentation]
+  </title><link rel="stylesheet" type="text/css" href="./codebase/css.css" /></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="page">
+    
+    
+
+
+<h1><a name="styling" id="styling">Styling</a></h1>
+<div class="level1">
+
+<p>
+To customize some element of the scheduler you should redefine the needed attributes of the related css class in the 
+<strong>&lt;style&gt;</strong> block of your page. The untouched attributes will take default values.
+
+</p>
+<pre class="code javascript"><span class="sy0">&lt;!</span>DOCTYPE HTML<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>html<span class="sy0">&gt;</span>
+  <span class="sy0">&lt;</span>head<span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>link rel<span class="sy0">=</span><span class="st0">&quot;stylesheet&quot;</span> href<span class="sy0">=</span><span class="st0">&quot;../../codebase/dhxscheduler_mobile.css&quot;</span> type<span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span> media<span class="sy0">=</span><span class="st0">&quot;screen&quot;</span> charset<span class="sy0">=</span><span class="st0">&quot;utf-8&quot;</span><span class="sy0">&gt;</span>
+	<span class="sy0">&lt;</span>script src<span class="sy0">=</span><span class="st0">&quot;../../codebase/dhxscheduler_mobile.js&quot;</span> type<span class="sy0">=</span><span class="st0">&quot;text/javascript&quot;</span> charset<span class="sy0">=</span><span class="st0">&quot;utf-8&quot;</span><span class="sy0">&gt;&lt;/</span>script<span class="sy0">&gt;</span>
+        <span class="sy0">&lt;</span>style<span class="sy0">&gt;</span>
+          .<span class="me1">dhx_schedulerbar</span><span class="br0">&#123;</span>
+	      background<span class="sy0">:</span>#6699FF <span class="sy0">!</span>important;
+          <span class="br0">&#125;</span>
+       <span class="sy0">&lt;/</span>style<span class="sy0">&gt;</span>
+  <span class="sy0">&lt;/</span>head<span class="sy0">&gt;</span>
+  <span class="sy0">&lt;</span>body<span class="sy0">&gt;</span>
+&nbsp;
+   ....
+<span class="sy0">&lt;/</span>html<span class="sy0">&gt;</span></pre>
+<p>
+
+In the example above we redefined only the background color. All the other attributes defined in the &#039;<strong>.dhx_schedulerbar</strong>&#039; class took the default values. 
+</p>
+
+<p>
+<strong>Related sample:</strong> <em>samples/01_basic/09_custom_style.html</em>
+</p>
+
+</div>
+
+<h2><a name="css_classes_and_the_related_elements" id="css_classes_and_the_related_elements">CSS classes and the related elements</a></h2>
+<div class="level2">
+<table class="inline">
+	<tr class="row0">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row1">
+		<th class="col0 leftalign" colspan="2"><strong>Bottom Toolbar</strong>   </th>
+	</tr>
+	<tr class="row2">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar</em>   </td><td class="col1">the toolbar </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"><em>.dhx_el_button input</em>   </td><td class="col1 leftalign">the &#039;Today&#039; button   </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"><em>.dhx_el_button.add input</em>  </td><td class="col1 leftalign">the &#039;+&#039; (add) button  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented</em>   </td><td class="col1 leftalign">the tabbar   </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented .segment_0</em>   </td><td class="col1 leftalign">the first tab   </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented .selected.segment_0</em>   </td><td class="col1 leftalign">the first tab in the selected state   </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented .segment_1</em>   </td><td class="col1 leftalign">the second tab  </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented .selected.segment_1</em>   </td><td class="col1 leftalign">the second tab in the selected state   </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented .segment_N</em>   </td><td class="col1">the last  tab </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"><em>.dhx_schedulerbar .dhx_el_segmented .selected.segment_N</em>   </td><td class="col1 leftalign">the last tab in the selected state   </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 rightalign" colspan="2">  <img src="./images/dhtmlxschedulermain_toolbar_css.png" class="media" alt="" /></td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row15">
+		<th class="col0 leftalign" colspan="2">&#039;<strong>List&#039; view</strong>   </th>
+	</tr>
+	<tr class="row16">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 leftalign"><em>.dhx_list_events_item</em>  </td><td class="col1 leftalign">the items   </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0 leftalign"><em>.dhx_list_events_item .dhx_day_title</em>  </td><td class="col1 leftalign">the colored label with the date of an event  </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0 leftalign"><em>.dhx_list_events_item .dhx_event_time</em>   </td><td class="col1 leftalign">the container with the time of an event   </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0 leftalign"><em>.dhx_list_events_item .dhx_event_marker</em>   </td><td class="col1 leftalign">the round marker displaying before the text of an event   </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0 leftalign"><em>.dhx_list_events_item .dhx_event_text</em>  </td><td class="col1 leftalign">the container with the text of an event  </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0 centeralign" colspan="2">  <img src="./images/dhtmlxschedulermobile_list_css.png" class="media" alt="" />  </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row24">
+		<th class="col0 leftalign" colspan="2"><strong>&#039;Day&#039; view</strong>   </th>
+	</tr>
+	<tr class="row25">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0 leftalign"><em>.dhx_dayevents_event_item</em>   </td><td class="col1 leftalign">the container with an event   </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0 leftalign"><em>.dhx_topbar</em>   </td><td class="col1 leftalign">the top toolbar   </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0 leftalign"><em>.dhx_dayevents_scale_item</em>   </td><td class="col1 leftalign">a single row ( including hours&#039; and minutes&#039; cells)   </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0 leftalign"><em>.dhx_dayevents_scale_top</em>   </td><td class="col1 leftalign">the top part of an item of the scale   </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0 leftalign"><em>.dhx_dayevents_scale_bottom</em>   </td><td class="col1 leftalign">the bottom part of an item of the scale   </td>
+	</tr>
+	<tr class="row31">
+		<td class="col0 leftalign"><em>.dhx_dayevents_scale_hour</em>   </td><td class="col1 leftalign">the container for hours  </td>
+	</tr>
+	<tr class="row32">
+		<td class="col0 leftalign"><em>.dhx_dayevents_scale_minute</em>   </td><td class="col1 leftalign">the container for minutes   </td>
+	</tr>
+	<tr class="row33">
+		<td class="col0 leftalign"><em>.dhx_cal_prev_button div</em>   </td><td class="col1 leftalign">the &#039;previous&#039; icon on the top toolbar   </td>
+	</tr>
+	<tr class="row34">
+		<td class="col0 leftalign"><em>.dhx_cal_next_button div</em>   </td><td class="col1 leftalign">the &#039;next&#039; icon on the top toolbar  </td>
+	</tr>
+	<tr class="row35">
+		<td class="col0 leftalign"><em>.dhx_el_label</em>  </td><td class="col1"> the container with the date on the toolbar</td>
+	</tr>
+	<tr class="row36">
+		<td class="col0 leftalign"><em>.dhx_dayevents_scale_event</em>  </td><td class="col1"> a single row ( without hours and minutes cells)</td>
+	</tr>
+	<tr class="row37">
+		<td class="col0 centeralign" colspan="2">  <img src="./images/dhtmlxschedulercss_day_view.png" class="media" alt="" />  </td>
+	</tr>
+	<tr class="row38">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row39">
+		<th class="col0 leftalign" colspan="2"><strong>&#039;Month&#039; view</strong>   </th>
+	</tr>
+	<tr class="row40">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row41">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num</em>  </td><td class="col1 leftalign">the cell with a day   </td>
+	</tr>
+	<tr class="row42">
+		<td class="col0 leftalign"><em>.dhx_cal_month</em>   </td><td class="col1 leftalign">the top toolbar   </td>
+	</tr>
+	<tr class="row43">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_selected_day</em>    </td><td class="col1 leftalign">the container with the selected day   </td>
+	</tr>
+	<tr class="row44">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_current_day</em>   </td><td class="col1 leftalign">the container with the current date   </td>
+	</tr>
+	<tr class="row45">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_current_day.dhx_cal_selected_day</em>   </td><td class="col1 leftalign">the container with the current date in the selected state  </td>
+	</tr>
+	<tr class="row46">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num .day_with_events</em>   </td><td class="col1 leftalign">the days that have assigned events  </td>
+	</tr>
+	<tr class="row47">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_selected_day .day_with_events</em>   </td><td class="col1 leftalign">the days that have assigned events in the selected state   </td>
+	</tr>
+	<tr class="row48">
+		<td class="col0 leftalign"><em>.dhx_cal_prev_button div</em>   </td><td class="col1 leftalign">the &#039;previous&#039; icon on the top toolbar   </td>
+	</tr>
+	<tr class="row49">
+		<td class="col0 leftalign"><em>.dhx_cal_next_button div</em>   </td><td class="col1 leftalign">the &#039;next&#039; icon on the top toolbar  </td>
+	</tr>
+	<tr class="row50">
+		<td class="col0 leftalign"><em>.dhx_list_day_events_item</em>   </td><td class="col1 leftalign">the items of the list   </td>
+	</tr>
+	<tr class="row51">
+		<td class="col0 leftalign"><em>.dhx_list_day_events_item .dhx_event_time</em>   </td><td class="col1 leftalign">the time of an event   </td>
+	</tr>
+	<tr class="row52">
+		<td class="col0 leftalign"><em>.dhx_list_day_events_item .dhx_event_marker</em>    </td><td class="col1 leftalign">the round marker of an item  </td>
+	</tr>
+	<tr class="row53">
+		<td class="col0 leftalign"><em>.dhx_list_day_events_item .dhx_event_text</em>   </td><td class="col1 leftalign">the text of an event  </td>
+	</tr>
+	<tr class="row54">
+		<td class="col0 rightalign" colspan="2">  <img src="./images/dhtmlxschedulercss_month_view.png" class="media" alt="" /></td>
+	</tr>
+	<tr class="row55">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row56">
+		<th class="col0 leftalign" colspan="2"><strong>Events preview screen</strong>   </th>
+	</tr>
+	<tr class="row57">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row58">
+		<td class="col0 leftalign"><em>.selected_event</em>  </td><td class="col1 leftalign">the container with an event   </td>
+	</tr>
+	<tr class="row59">
+		<td class="col0 leftalign"><em>.selected_event .event_title</em>   </td><td class="col1 leftalign">the title of an event   </td>
+	</tr>
+	<tr class="row60">
+		<td class="col0 leftalign"><em>.selected_event .event_text</em>   </td><td class="col1 leftalign">the description of an event  </td>
+	</tr>
+	<tr class="row61">
+		<td class="col0 leftalign"><em>.dhx_topbar</em>    </td><td class="col1 leftalign">the top toolbar   </td>
+	</tr>
+	<tr class="row62">
+		<td class="col0"><em>.dhx_el_button input</em></td><td class="col1">the &#039;Edit&#039; button</td>
+	</tr>
+	<tr class="row63">
+		<td class="col0"><em>.dhx_el_button.cancel input</em></td><td class="col1">the &#039;Back&#039; button</td>
+	</tr>
+	<tr class="row64">
+		<td class="col0"><em>.dhx_el_formbutton.delete input</em></td><td class="col1">the &#039;Delete&#039; button</td>
+	</tr>
+	<tr class="row65">
+		<td class="col0 centeralign" colspan="2">  <img src="./images/dhtmlxschedulerevent_preview_css.png" class="media" alt="" />  </td>
+	</tr>
+	<tr class="row66">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row67">
+		<th class="col0 leftalign" colspan="2"><strong>Details form</strong>   </th>
+	</tr>
+	<tr class="row68">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row69">
+		<td class="col0"><em>.dhx_topbar</em></td><td class="col1">the top toolbar</td>
+	</tr>
+	<tr class="row70">
+		<td class="col0 leftalign"><em>.dhx_el_button input</em>   </td><td class="col1 leftalign">the &#039;Save&#039; button   </td>
+	</tr>
+	<tr class="row71">
+		<td class="col0 leftalign"><em>.dhx_el_button.cancel input</em>   </td><td class="col1 leftalign">the &#039;Cancel&#039; button  </td>
+	</tr>
+	<tr class="row72">
+		<td class="col0 leftalign"><em>.dhx_el_box</em>   </td><td class="col1">the style for the element container </td>
+	</tr>
+	<tr class="row73">
+		<td class="col0 leftalign"><em>.dhx_el_box label</em>   </td><td class="col1">the style for labels of fields (ex. “Event”,”Start”,”End”)</td>
+	</tr>
+	<tr class="row74">
+		<td class="col0 leftalign"><em>.dhx_el_box .dhx_inp_text</em>   </td><td class="col1"> the style for text in inputs</td>
+	</tr>
+	<tr class="row75">
+		<td class="col0 leftalign"><em>.invalid.dhx_el_box</em>   </td><td class="col1">the style for a div with invalid data (highlighted border by default) </td>
+	</tr>
+	<tr class="row76">
+		<td class="col0 leftalign"><em>.invalid .dhx_inp_text</em>   </td><td class="col1">the style for an input with invalid data (highlighted text by default) </td>
+	</tr>
+	<tr class="row77">
+		<td class="col0 leftalign"><em>.dhx_inp_toggle_left_on</em>  </td><td class="col1"> the style for the left(&#039;Time&#039;) part of the toggle in the active state</td>
+	</tr>
+	<tr class="row78">
+		<td class="col0 leftalign"><em>.dhx_inp_toggle_left_off</em>   </td><td class="col1"> the style for the left(&#039;Time) part of the toggle in the inactive state</td>
+	</tr>
+	<tr class="row79">
+		<td class="col0 leftalign"><em>.dhx_inp_toggle_right_on</em>  </td><td class="col1"> the style for the right(&#039;All day&#039;) part of the toggle in the active state</td>
+	</tr>
+	<tr class="row80">
+		<td class="col0 leftalign"><em>.dhx_inp_toggle_right_off</em>   </td><td class="col1"> the style for the right(&#039;All day&#039;) part of the toggle in the inactive state</td>
+	</tr>
+	<tr class="row81">
+		<td class="col0 leftalign"><em>.dhx_el_textarea textarea</em>   </td><td class="col1"> the textarea style (the “Notes” field)</td>
+	</tr>
+	<tr class="row82">
+		<td class="col0 centeralign" colspan="2">  <img src="./images/dhtmlxschedulerdetailsform_css.png" class="media" alt="" />  </td>
+	</tr>
+	<tr class="row83">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row84">
+		<th class="col0 leftalign" colspan="2"><strong>Start(end) date edit form</strong>   </th>
+	</tr>
+	<tr class="row85">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row86">
+		<td class="col0 leftalign"><em>.dhx_topbar</em>    </td><td class="col1 leftalign">the top toolbar   </td>
+	</tr>
+	<tr class="row87">
+		<td class="col0 leftalign"><em>.dhx_el_label</em>  </td><td class="col1">the container with the date on the toolbar</td>
+	</tr>
+	<tr class="row88">
+		<td class="col0"><em>.dhx_el_button input</em></td><td class="col1">the &#039;Done&#039; button</td>
+	</tr>
+	<tr class="row89">
+		<td class="col0"><em>.dhx_el_button.cancel input</em></td><td class="col1">the &#039;Cancel&#039; button</td>
+	</tr>
+	<tr class="row90">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num</em>  </td><td class="col1 leftalign">the cell with a day   </td>
+	</tr>
+	<tr class="row91">
+		<td class="col0 leftalign"><em>.dhx_cal_month</em>   </td><td class="col1 leftalign">the toolbar with the current month   </td>
+	</tr>
+	<tr class="row92">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_selected_day</em>    </td><td class="col1 leftalign">the container with the selected day   </td>
+	</tr>
+	<tr class="row93">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_current_day</em>   </td><td class="col1 leftalign">the container with the current date   </td>
+	</tr>
+	<tr class="row94">
+		<td class="col0 leftalign"><em>.dhx_cal_day_num.dhx_cal_current_day.dhx_cal_selected_day</em>   </td><td class="col1 leftalign">the container with the current date in the selected state  </td>
+	</tr>
+	<tr class="row95">
+		<td class="col0 leftalign"><em>.dhx_cal_prev_button div</em>   </td><td class="col1 leftalign">the &#039;previous&#039; icon on the top toolbar   </td>
+	</tr>
+	<tr class="row96">
+		<td class="col0 leftalign"><em>.dhx_cal_next_button div</em>   </td><td class="col1 leftalign">the &#039;next&#039; icon on the top toolbar  </td>
+	</tr>
+	<tr class="row97">
+		<td class="col0 leftalign"><em>.dhx_cal_time_select</em>   </td><td class="col1 leftalign">the toolbar with the time controls   </td>
+	</tr>
+	<tr class="row98">
+		<td class="col0 leftalign"><em>.dhx_cal_time_select .dhx_hour_select</em>   </td><td class="col1 leftalign">the control for setting hours   </td>
+	</tr>
+	<tr class="row99">
+		<td class="col0 leftalign"><em>.dhx_cal_time_select .dhx_minute_select</em>    </td><td class="col1 leftalign">the control for setting minutes  </td>
+	</tr>
+	<tr class="row100">
+		<td class="col0 centeralign" colspan="2">  <img src="./images/dhtmlxschedulerdate_editform_css.png" class="media" alt="" />  </td>
+	</tr>
+	<tr class="row101">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row102">
+		<th class="col0 leftalign" colspan="2"><strong>Confirm window</strong>   </th>
+	</tr>
+	<tr class="row103">
+		<td class="col0 rightalign" colspan="2">    </td>
+	</tr>
+	<tr class="row104">
+		<td class="col0 leftalign"><em>.dhx_el_bigroundbutton input</em>  </td><td class="col1 leftalign">the cancel button   </td>
+	</tr>
+	<tr class="row105">
+		<td class="col0 leftalign"><em>.dhx_el_bigbutton input</em>  </td><td class="col1 leftalign">the confirm button   </td>
+	</tr>
+	<tr class="row106">
+		<td class="col0 centeralign" colspan="2">  <img src="./images/dhtmlxschedulerconfirm_window_css.png" class="media" alt="" />  </td>
+	</tr>
+</table>
+
+</div>
+
+    
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+     
+
+   
+    
+      
+        
+        
+      
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+    
+
+  </div>
+
+  
+
+</div>
+
+
+
+<div class="no"><img src="./images/" width="1" height="1" alt=""  /></div>
+     <div class="footer">
+        <div class="footer-logo"></div>
+        <div class="copyright">Copyright © 1998-2011 DHTMLX LTD.<br />All rights reserved.</div>
+            	    </div>
+</body>
+</html>
