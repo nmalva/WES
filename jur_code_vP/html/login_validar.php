@@ -21,7 +21,7 @@ unset($_SESSION["tenant_control"]);
 
 
 if (is_numeric($r["usu_id"])) {
-    $_SESSION["tenant_control"] = 1;
+    $_SESSION["tenant_control"] = "ortiz";
     $_SESSION["usu_id"] = $r["usu_id"];
     $_SESSION["usu_nombre"] = $r["usu_nombre"];
     $_SESSION["usu_apellido"] = $r["use_apellido"];

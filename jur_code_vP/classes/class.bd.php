@@ -2,9 +2,9 @@
 class bd
 {
   private $servidor="localhost";
-  private $usuario="root";
-  private $clave="root";
-  private $basededatos="nmalva_nmdalel";
+  private $usuario="nmalva_nmalva";
+  private $clave="N1c0las1441";
+  private $basededatos="nmalva_waraestudio_nmdalel";
   private $conexion;
 
   function __construct()

@@ -1,5 +1,6 @@
 <?php include("includes/title.php");?>
 <?php include ("includes/security_session.php");?>
+<?php include ("includes/security_admin.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -13,8 +14,8 @@
 
 <!--  BEGIN GLOBAL VARIABLES -->
 <?php 
-$admin_path="../classes/abm_clase/admin_jurisdicciones.php";
-$admin_name="JURISDICCIONES";
+$admin_path="../classes/abm_clase/admin_clientes.php";
+$admin_name="CLIENTES";
 ?>
 <!--  END GLOBAL VARIABLES -->
 
@@ -135,7 +136,9 @@ $admin_name="JURISDICCIONES";
 					</div>
 					<div class="portlet-body form">
 
-					<?php include "{$admin_path}"?>
+					<?php 			
+                        include "{$admin_path}";
+		             ?>
 
 					</div>
 				</div>

@@ -1,5 +1,6 @@
 <?php include("includes/title.php");?>
 <?php include ("includes/security_session.php");?>
+<?php include ("includes/security_admin.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -13,8 +14,8 @@
 
 <!--  BEGIN GLOBAL VARIABLES -->
 <?php 
-$admin_path="../classes/abm_clase/admin_estadocaso.php";
-$admin_name="ESTADOS DE CASOS";
+$admin_path="../classes/abm_clase/admin_tipoactividad.php";
+$admin_name="TIPOS DE ACTIVIDADES";
 ?>
 <!--  END GLOBAL VARIABLES -->
 

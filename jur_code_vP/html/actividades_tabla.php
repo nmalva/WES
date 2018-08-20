@@ -8,8 +8,8 @@
 <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
 <!--  BEGIN INCLUDE CLASSES -->
 <?php include_once("../classes/class.casos.php");?>
-<?php include_once("../classes/class.actividades.php");?>
 <?php include_once("../classes/class.usuarios.php");?>
+<?php include_once("../classes/class.actividades.php");?>
 <?php include_once("../classes/class.utiles.php");?>
 <?php include_once("../classes/class.bd.php");?>
 <!--  END INCLUDE CLASSES -->
@@ -23,18 +23,6 @@ $get_cas_id=$_GET["cas_id"];
 
 <!--  BEGIN PHP FUNCTIONS -->
 <?php 
-function getCasoInfo($cas_id){
-    $class_bd=new bd();
-    $sql="SELECT * FROM Casos 
-          INNER JOIN Clientes on Casos.cli_id=Clientes.cli_id
-          WHERE cas_id={$cas_id}";
-    
-    $resultado=$class_bd->ejecutar($sql);
-    $r=$class_bd->retornar_fila($resultado);   
-	$string.= " <i style='font-size:17px;' class='icon-user'>  Cliente: ". $r["cli_nombre"]." ".$r["cli_apellido"]."</i>";
-	$string.=" <i style='font-size:10px;'> - ".$r["cas_caratula"]." - </i>";
-	echo $string;	
-}
 
 function get_datos_usu_id($usu_id){
     $class_usuarios=new Usuarios($usu_id);
@@ -42,58 +30,83 @@ function get_datos_usu_id($usu_id){
     return ($usu_apellido);
 }
 
+function getJuzgado($juz_id){
+    $class_utiles=new utiles();
+    $class_bd=new bd();
+    $sql="SELECT juz_nombre FROM Juzgados WHERE juz_id={$juz_id}";
+    $resultado=$class_bd->ejecutar($sql);
+    $r=$class_bd->retornar_fila($resultado);   
+    return ($r["juz_nombre"]);
+}
+
 function escribir_actividades($get_cas_id){
     $class_bd=new bd();
     $class_utiles= new utiles();
     $sql="SELECT * FROM Actividades 
-            INNER JOIN TipoActividad on Actividades.tia_id = TipoActividad.tia_id
-            INNER JOIN Usuarios      on Actividades.usu_idemisor = Usuarios.usu_id
-          WHERE cas_id={$get_cas_id}";
-    
+            INNER JOIN TipoActividad  on Actividades.tia_id       =     TipoActividad.tia_id
+            INNER JOIN Usuarios       on Actividades.usu_idemisor =     Usuarios.usu_id
+            INNER JOIN CompartirCasos on Actividades.cas_id       =     CompartirCasos.cas_id
+            INNER JOIN Casos          on Actividades.cas_id       =     Casos.cas_id
+                        
+          WHERE (act_estado=0 or act_estado =1 or act_estado=2)
+          AND tia_popup=1
+          AND tia_diaprevio > 0  
+	      AND act_fecha <= DATE_ADD(CURDATE(), INTERVAL tia_diaprevio DAY) 
+          AND CompartirCasos.usu_id='{$_SESSION["usu_id"]}'";  //act_estad=o=0 es abierto";  //act_estad=o=0 es abierto
+                                                               // La última línea para mostrar actividades en casos compartidos
+         
     $resultado=$class_bd->ejecutar($sql);
     
     while ($r=$class_bd->retornar_fila($resultado))
     {
-            if ($r["act_estado"]==0){
+        
+        if ($r["act_estado"]==0){
             $estado="Abierto";
             $color="";
-            }
-            if ($r["act_estado"]==1){
-                $estado="Verificar";
-                $color="#58b8a9";
-            }
-            if ($r["act_estado"]==2){
-                $estado="Reveer";
-                $color="#f36a5a";
-            }
-            if ($r["act_estado"]==3){
-               $estado="Cerrado";
-                $color="#292829";
-            }
-        $usu_apellido=get_datos_usu_id($r["usu_idresponsable"]);
+        }
+        if ($r["act_estado"]==1){
+            $estado="Verificar";
+            $color="#58b8a9";
+        }
+        if ($r["act_estado"]==2){
+            $estado="Reveer";
+            $color="#f36a5a";
+        }
+        if ($r["act_estado"]==3){
+           $estado="Cerrado";
+            $color="#292829";
+        }
         
- 
+        
+        
+        $usu_apellido=get_datos_usu_id($r["usu_idresponsable"]);
         $fecha_modificacion=($r["act_fechacierre"]==NULL ? "" : $class_utiles->fecha_mysql_php_datetime($r["act_fechacierre"]));
         
-        $table="<tr href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer'>";
-        $table.="<td style='color:{$color};'>{$r["act_id"]}</td>";
-        $table.="<td style='color:{$color};'>{$r["tia_nombre"]} {$r["cli_apellido"]}</td>";
-        $table.="<td style='color:{$color};'>{$r["usu_apellido"]}</td>";
-        $table.="<td style='color:{$color};'>{$usu_apellido}</td>";
-        $table.="<td style='color:{$color};'>{$class_utiles->CortarTexto(stripslashes($r["act_comentario"]), 0,40)}...</td>";
-        $table.="<td style='color:{$color};'>{$class_utiles->fecha_mysql_php_datetime($r["act_fecha"])}</td>";
-        $table.="<td style='color:{$color};'>{$fecha_modificacion}</td>";
-        $table.="<td style='color:{$color};'>{$estado}</td>";
-        $table.="<td style='display:none;'>{$r["act_fecha"]}</td>";
-        $table.="</tr>";
-
-        echo $table;
+            $juzgado = getJuzgado($r["juz_id"]);
+            
+            $table="<tr>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$r["act_id"]}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$r["cas_legajo1"]}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$juzgado}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$r["cas_caratula"]}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$r["tia_nombre"]} {$r["cli_apellido"]}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$r["usu_apellido"]}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$usu_apellido}</td>";
+            //$table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$class_utiles->CortarTexto(stripslashes($r["act_comentario"]), 0,40)}...</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$r["act_comentario"]}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$class_utiles->fecha_mysql_php_datetime($r["act_fecha"])}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$fecha_modificacion}</td>";
+            $table.="<td href='caso_actividades_modal.php?act_id={$r["act_id"]}&cas_id={$get_cas_id}' data-target='#ajax' data-toggle='modal' style='cursor:pointer; color:{$color};'>{$estado}</td>";
+            $table.="<td onclick='redireccionar_caso_actividades_tabla({$r["cas_id"]})' style='cursor:pointer; color:{$color}; text-align: center;'><i style='font-size:15px;' class='icon-list'></td>";
+            $table.="<td style='display:none;'>{$r["act_fecha"]}</td>";
+            $table.="</tr>";
+    
+            echo $table;
         
     }
 }
 ?>
 <head>
-
 <!--  PAGE TITLE  -->
 <?php include ("includes/pagetitle.php");?>
 <!--  END PAGE TITLE  -->
@@ -135,32 +148,13 @@ function escribir_actividades($get_cas_id){
 	</div>
 	<!-- END HEADER -->
 	<!-- BEGIN PAGE CONTAINER -->
-	<div class="page-container">
+	<div class="page-container-fluid">
 		<!-- BEGIN PAGE HEAD -->
-		<div class="page-head">
-			<div class="container">
-				<!-- BEGIN PAGE TITLE -->
-				<div class="page-title">
-					<h1>
-                        <?php getCasoInfo($get_cas_id);?>
-					</h1>
-				</div>
-				<!-- END PAGE TITLE -->
-				<!-- BEGIN PAGE TOOLBAR -->
-				<div class="page-toolbar">
-					<!-- BEGIN THEME PANEL -->
-					<div class="btn-group btn-theme-panel">
-						
-					</div>
-					<!-- END THEME PANEL -->
-				</div>
-				<!-- END PAGE TOOLBAR -->
-			</div>
-		</div>
+		
 		<!-- END PAGE HEAD -->
 		<!-- BEGIN PAGE CONTENT -->
 		<div class="page-content">
-			<div class="container">
+			<div class="container-fluid">
 				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 				<div class="modal fade" id="portlet-config" tabindex="-1"
 					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -186,12 +180,9 @@ function escribir_actividades($get_cas_id){
 				<!-- BEGIN PAGE BREADCRUMB -->
         			<ul class="page-breadcrumb breadcrumb">
         				<li>
-        					<a href="caso_tabla.php">Retornar</a><i class="fa fa-circle"></i>
+        					<a href="home.php">Retornar</a>
         				</li>
-        				<li>
-        					<a href='caso_actividades_modal.php?cas_id=<?php echo $get_cas_id;?>' data-target='#ajax' data-toggle='modal'>Nueva Actividad</a>
-        					
-        				</li>
+        				
         				
         			</ul>
 			<!-- END PAGE BREADCRUMB -->
@@ -203,23 +194,27 @@ function escribir_actividades($get_cas_id){
 							<div class="portlet-title">
 								<div class="caption">
 									<i class="fa fa-cogs font-green-sharp"></i> <span
-										class="caption-subject font-green-sharp bold uppercase"> TABLA DE ACTIVIDADES DEL CASO ID - <?php echo  $get_cas_id;?></span>
+										class="caption-subject font-green-sharp bold uppercase"> Actividades y Tareas</span>
 								</div>
 								<div class="tools"></div>
 							</div>
 							<div class="portlet-body">
 								<table class="table table-striped table-bordered table-hover"
-									id="sample_3">
+									id="sample_2">
 									<thead>
 										<tr>
-											<th>Id Act</th>
-											<th>Tipo Actividad</th>
+											<th>Id</th>
+											<th>Nº Exp.</th>
+											<th>Juzgado</th>
+											<th>Carátula</th>
+											<th>Actividad</th>
 											<th>Emisor</th>
 											<th>Responsable</th>
 											<th>Comentario</th>
 											<th>Fecha Limite</th>
-											<th>Ultima Modificación</th>
+											<th>Modificación</th>
 											<th>Estado</th>
+											<th>Ver Caso</th>
 											<th style="display:none;">Fecha Orden</th>
 										</tr>
 									</thead>
@@ -281,8 +276,6 @@ function escribir_actividades($get_cas_id){
 	src="../../assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
 <script type="text/javascript"
 	src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-<script type="text/javascript"
-	src="../../assets/global/plugins/moment.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 	
 	
@@ -297,6 +290,9 @@ function escribir_actividades($get_cas_id){
 <script src="../../assets/admin/pages/scripts/table-advanced.js"></script>
 
 
+
+
+
 <script>
 jQuery(document).ready(function() {       
    Metronic.init(); // init metronic core components
@@ -308,6 +304,10 @@ jQuery(document).ready(function() {
 //--START JAVASCRIPT FUNCTIONS--
 function redireccionar_caso_formulario(cas_id){
 	pagina = "caso_formulario.php?cas_id="+ cas_id;
+	setTimeout(redireccionar, 100, pagina);	
+}
+function redireccionar_caso_actividades_tabla(cas_id){
+	pagina = "caso_actividades_tabla.php?cas_id="+ cas_id;
 	setTimeout(redireccionar, 100, pagina);	
 }
 function redireccionar(pagina) {

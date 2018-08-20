@@ -179,13 +179,13 @@ function get_cantidad_clientes(){
 										</div>
 									</div>
 
-									<div class="tile bg-grey-steel">
+									<div class="tile bg-red-sunglo" onclick="redireccionar_dashboard_general();">
 										<div class="tile-body">
 											<i class="fa fa-bar-chart-o"></i>
 										</div>
 										<div class="tile-object">
 											<div class="name">Reportes</div>
-											<div class="number">121</div>
+											<div class="number">1</div>
 										</div>
 									</div>
 
@@ -313,6 +313,10 @@ function redireccionar_actividades_calendario(){
 }
 function redireccionar_actividades_calendario_movil(){
 	pagina = "actividades_calendario_movil.php";
+	setTimeout(redireccionar, 100, pagina);	
+}
+function redireccionar_dashboard_general(){
+	pagina = "dashboard_general.php";
 	setTimeout(redireccionar, 100, pagina);	
 }
 function redireccionar(pagina) {

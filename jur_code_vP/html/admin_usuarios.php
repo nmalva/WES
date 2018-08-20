@@ -1,5 +1,6 @@
 <?php include("includes/title.php");?>
 <?php include ("includes/security_session.php");?>
+<?php include ("includes/security_admin.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->

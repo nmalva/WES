@@ -1,5 +1,6 @@
 <?php include("includes/title.php");?>
 <?php include ("includes/security_session.php");?>
+<?php include ("includes/security_admin.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -13,7 +14,8 @@
 
 <!--  BEGIN GLOBAL VARIABLES -->
 <?php 
-$admin_path="../classes/abm_clase/admin_juzgados.php";
+$admin_path="../classes/abm_clase/admin_jurisdicciones.php";
+$admin_name="JURISDICCIONES";
 ?>
 <!--  END GLOBAL VARIABLES -->
 
@@ -123,7 +125,7 @@ $admin_path="../classes/abm_clase/admin_juzgados.php";
 					<div class="portlet-title">
 						<div class="caption">
 							<i class="fa fa-cogs font-green-sharp"></i> <span
-								class="caption-subject font-green-sharp bold uppercase">Juzgados</span>
+								class="caption-subject font-green-sharp bold uppercase"><?php echo $admin_name;?></span>
 						</div>
 						<div class="tools">
 							<a href="javascript:;" class="collapse"> </a> <a
